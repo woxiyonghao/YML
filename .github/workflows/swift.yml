@@ -1,42 +1,40 @@
-name: Xcode Build and Test
+name: iOS starter workflow
 
-on: [push]
+on:
+  push:
+    branches: [ "main", "master", "dev" ]
+  pull_request:
+    branches: [ "main", "master", "dev" ]
 
 jobs:
   build:
-    name: Build and Test
+    name: Build and Test default scheme using real device
     runs-on: macos-latest
-    
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      
-    - name: Setup Xcode
-      uses: actions/setup-xcode@v2
-
-    - name: Check for Podfile
-      id: podfile-check
-      run: test -f Podfile && echo "Podfile exists" || echo "Podfile does not exist"
-
-    - name: Install CocoaPods
-      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
-      run: sudo gem install cocoapods
-      
-    - name: Install dependencies
-      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
-      run: pod install
-      working-directory: 'GameSirBeyond' # 指定你的项目文件夹路径
-      
-    - name: Modify Xcode project settings
-      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
-      run: |
-        xcodebuild -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -showBuildSettings > build_settings.txt
-        sed -i '' 's/EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64 //g' build_settings.txt
-        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -showBuildSettings > build_settings_updated.txt
-        diff build_settings.txt build_settings_updated.txt || true
-      working-directory: 'GameSirBeyond' # 指定你的项目文件夹路径
-
-    - name: Build and Test
-      run: xcodebuild test -workspace YourProject.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-      working-directory: YourProjectFolder # 指定你的项目文件夹路径
-
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Default Scheme
+        run: |
+          scheme_list=$(xcodebuild -list -json | tr -d "\n")
+          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          echo $default | cat >default
+          echo Using default scheme: $default
+      - name: Build
+        env:
+          scheme: ${{ 'default' }}
+          platform: ${{ 'iphoneos' }} # 使用真机设备
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "generic/platform=iOS" # 指定真机设备
+      - name: Test
+        env:
+          scheme: ${{ 'default' }}
+          platform: ${{ 'iphoneos' }} # 使用真机设备
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "generic/platform=iOS" # 指定真机设备
