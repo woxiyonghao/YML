@@ -22,8 +22,8 @@ jobs:
           echo Using default scheme: $default
       - name: Build
         env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'Any iOS Device (arm64)' }}
+          scheme: ${{ '' }}
+          platform: ${{ '' }}
         run: |
-          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -dry-run -destination "platform=$platform,name=$device"
+          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -dry-run -destination "platform=GameSirBeyond,name=Any iOS Device (arm64)"
      
