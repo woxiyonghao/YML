@@ -35,6 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           brew install swift
+          echo 'export PATH="/opt/homebrew/opt/swift/bin:$PATH"' >> /Users/runner/.bash_profile
           swift package update
 
       - name: Build
