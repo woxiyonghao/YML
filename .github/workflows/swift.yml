@@ -10,9 +10,7 @@ jobs:
   build:
     name: Build and Test default scheme using real device
     runs-on: macos-latest
-    env:
-      CERTIFICATE_P12: ${{ secrets.CERTIFICATE_P12 }}  # 添加密钥和证书到环境变量
-      CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+   
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,19 +21,13 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
-      - name: Install Certificate   
-        run: |
-          echo "$CERTIFICATE_P12" | base64 --decode > certificate.p12
-          security create-keychain -p "" build.keychain
-          security import certificate.p12 -k ~/Library/Keychains/build.keychain -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
-          
+     
       - name: Build
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'iphoneos' }} # 使用真机设备
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "generic/platform=iOS" # 指定真机设备
+          xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" 
      
