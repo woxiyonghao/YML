@@ -25,5 +25,6 @@ jobs:
           scheme: ${{ 'default' }}
           platform: ${{ 'iphoneos' }}
         run: |
+          xcrun instruments -w 'iPhone 7 (10.3)' || sleep 15
           xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond 
      
