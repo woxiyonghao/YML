@@ -15,8 +15,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Install Dependencies
-        run: swift build
+      - name: Install Cocoapods
+        run: bundle exec pod install
  
       - name: Run Tests
         run: swift test
