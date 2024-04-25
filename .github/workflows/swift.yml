@@ -27,16 +27,16 @@ jobs:
     - name: Install dependencies
       if: steps.podfile-check.outputs.stdout == 'Podfile exists'
       run: pod install
-      working-directory: YourProjectFolder # 指定你的项目文件夹路径
+      working-directory: 'GameSirBeyond' # 指定你的项目文件夹路径
       
     - name: Modify Xcode project settings
       if: steps.podfile-check.outputs.stdout == 'Podfile exists'
       run: |
-        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -showBuildSettings > build_settings.txt
+        xcodebuild -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -showBuildSettings > build_settings.txt
         sed -i '' 's/EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64 //g' build_settings.txt
         xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -showBuildSettings > build_settings_updated.txt
         diff build_settings.txt build_settings_updated.txt || true
-      working-directory: YourProjectFolder # 指定你的项目文件夹路径
+      working-directory: 'GameSirBeyond' # 指定你的项目文件夹路径
 
     - name: Build and Test
       run: xcodebuild test -workspace YourProject.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
