@@ -14,17 +14,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      - name: Build
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'My Mac (Designed For iPad)' }}
-        run: |
-          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond   -destination 'id:0000FE00-23C2E92AAEBCC36B'
+        
+      - name: Install Dependencies
+        run: swift build
+ 
+      - name: Run Tests
+        run: swift test
 
     
