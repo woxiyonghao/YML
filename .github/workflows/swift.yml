@@ -25,5 +25,5 @@ jobs:
           scheme: ${{ 'default' }}
           platform: ${{ 'iphoneos' }}
         run: |
-          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -configuration Debug -sdk iphoneos9.3
+          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -configuration Debug -sdk iphoneos13.0
      
