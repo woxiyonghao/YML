@@ -23,7 +23,7 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
+          platform: ${{ 'Any iOS Device (arm64)' }}
         run: |
-          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -dry-run
+          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -dry-run -destination "platform=$platform,name=$device"
      
