@@ -1,4 +1,4 @@
-name: iOS starter workflow
+name: GameSirApp
 
 on:
   push:
@@ -15,8 +15,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: swift build
+        run: GameSirApp build
       - name: Run tests
-        run: swift test
+        run: GameSirApp test
 
     
