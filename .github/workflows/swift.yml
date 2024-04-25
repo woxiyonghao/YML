@@ -23,7 +23,6 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
         run: |
-         GameSirBeyond build
-    
+          xcodebuild clean dry-run -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond 
+     
