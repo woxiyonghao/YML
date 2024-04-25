@@ -20,6 +20,8 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
+      - name: Create XCTestRun folder
+        run: mkdir -p GameSirBeyond_GameSirBeyond_iphoneos17.0-arm64.xctestrun
       - name: Build
         env:
           scheme: ${{ 'default' }}
