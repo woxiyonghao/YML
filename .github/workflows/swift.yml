@@ -23,7 +23,7 @@ jobs:
       - name: Setup Cocoapods
         run: |
           sudo gem install cocoapods
-          pods install
+          pod install
       - name: Build
         env:
           scheme: ${{ 'default' }}
