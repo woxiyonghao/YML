@@ -10,17 +10,25 @@ jobs:
   build:
     name: Build and Test default scheme using real device
     runs-on: macos-latest
-
+    env:
+      CERTIFICATE_P12: ${{ secrets.CERTIFICATE_P12 }}  # 添加密钥和证书到环境变量
+      CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
-     
+      - name: Install Certificate   
+        run: |
+          echo "$CERTIFICATE_P12" | base64 --decode > certificate.p12
+          security create-keychain -p "" build.keychain
+          security import certificate.p12 -k ~/Library/Keychains/build.keychain -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          
       - name: Build
         env:
           scheme: ${{ 'default' }}
