@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>304891727788-kbrkdclvri90hblf7frecre9rl2rg71n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.304891727788-kbrkdclvri90hblf7frecre9rl2rg71n</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>304891727788-2v3esm2hh3b06hmrd36f1hutbg2a78rl.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD9Wirp8jZZTLlcvCl-KYJe1X4s3REsdHg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>304891727788</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.xiaoji.beyond</string>
+	<key>PROJECT_ID</key>
+	<string>gamesir-8c76b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gamesir-8c76b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:304891727788:ios:7cfef1b114fdbe65adb409</string>
+</dict>
+</plist>

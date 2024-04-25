@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameDetailView" customModule="Eggshell" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="wDS-wD-oLx" id="WOO-wt-I2H"/>
+                <outlet property="downloadButton" destination="PfV-aH-2NH" id="2em-Yl-Jdg"/>
+                <outlet property="scrollView" destination="Cir-i2-Iiw" id="hvm-rI-DWA"/>
+                <outlet property="shareButton" destination="Dx0-sX-1Rv" id="22c-JW-bxp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-i2-Iiw" customClass="GameDetailScrollView" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAQ-xd-J6L">
+                            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fAQ-xd-J6L" firstAttribute="top" secondItem="Cir-i2-Iiw" secondAttribute="top" id="3f2-TE-3fN"/>
+                        <constraint firstAttribute="trailing" secondItem="fAQ-xd-J6L" secondAttribute="trailing" id="KYZ-ru-Q89"/>
+                        <constraint firstItem="fAQ-xd-J6L" firstAttribute="leading" secondItem="Cir-i2-Iiw" secondAttribute="leading" id="NLg-Gg-PWZ"/>
+                        <constraint firstItem="fAQ-xd-J6L" firstAttribute="centerY" secondItem="Cir-i2-Iiw" secondAttribute="centerY" id="ie4-ui-EQT"/>
+                        <constraint firstAttribute="bottom" secondItem="fAQ-xd-J6L" secondAttribute="bottom" id="jOI-RY-8Jw"/>
+                        <constraint firstItem="fAQ-xd-J6L" firstAttribute="centerX" secondItem="Cir-i2-Iiw" secondAttribute="centerX" id="oBe-zx-uJR"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="4wa-ry-JqO"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="aTg-AZ-5Wd"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDS-wD-oLx" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="727" y="324" width="106" height="50"/>
+                    <color key="backgroundColor" name="color_gamepad_button_bg"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="106" id="I4E-9e-VhN"/>
+                        <constraint firstAttribute="height" constant="50" id="nGm-Ec-TUJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  Back" image="gamepad_key_b">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nTextNormal" value="  Back"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx0-sX-1Rv" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="610" y="324" width="106" height="50"/>
+                    <color key="backgroundColor" name="color_gamepad_button_bg"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="106" id="795-UP-4Yi"/>
+                        <constraint firstAttribute="height" constant="50" id="zXg-ed-Eah"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  分享" image="gamepad_key_y">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfV-aH-2NH" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="493" y="324" width="106" height="50"/>
+                    <color key="backgroundColor" name="color_gamepad_button_bg"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="106" id="Bzd-gs-Drl"/>
+                        <constraint firstAttribute="height" constant="50" id="YfE-Kc-Ya1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  下载" image="gamepad_key_x">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PfV-aH-2NH" firstAttribute="centerY" secondItem="wDS-wD-oLx" secondAttribute="centerY" id="Aab-II-eR6"/>
+                <constraint firstItem="Dx0-sX-1Rv" firstAttribute="leading" secondItem="PfV-aH-2NH" secondAttribute="trailing" constant="11" id="J45-Yj-gTC"/>
+                <constraint firstAttribute="trailing" secondItem="wDS-wD-oLx" secondAttribute="trailing" constant="19" id="OfV-mb-HKi"/>
+                <constraint firstItem="Cir-i2-Iiw" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Qc7-5b-kUg"/>
+                <constraint firstItem="Dx0-sX-1Rv" firstAttribute="centerY" secondItem="wDS-wD-oLx" secondAttribute="centerY" id="Qo6-sJ-PeF"/>
+                <constraint firstAttribute="bottom" secondItem="Cir-i2-Iiw" secondAttribute="bottom" id="de6-r0-OPO"/>
+                <constraint firstItem="Cir-i2-Iiw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fNP-hA-5Ec"/>
+                <constraint firstItem="Cir-i2-Iiw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwa-K4-y16"/>
+                <constraint firstItem="wDS-wD-oLx" firstAttribute="leading" secondItem="Dx0-sX-1Rv" secondAttribute="trailing" constant="11" id="iHH-mn-EvT"/>
+                <constraint firstAttribute="bottom" secondItem="wDS-wD-oLx" secondAttribute="bottom" constant="19" id="j9G-hr-1fO"/>
+            </constraints>
+            <point key="canvasLocation" x="131.51658767772511" y="-12.307692307692307"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Dx0-sX-1Rv">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+        <designable name="PfV-aH-2NH">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+        <designable name="wDS-wD-oLx">
+            <size key="intrinsicContentSize" width="54" height="20"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="gamepad_key_b" width="12" height="12"/>
+        <image name="gamepad_key_x" width="12" height="12"/>
+        <image name="gamepad_key_y" width="12" height="12"/>
+        <namedColor name="color_gamepad_button_bg">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

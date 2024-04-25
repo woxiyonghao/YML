@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="SearchGameCollectionViewCell" customModule="Eggshell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="452" height="208"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="452" height="208"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-Bw-Kn7">
+                        <rect key="frame" x="0.0" y="0.0" width="452" height="208"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Jt8-Bw-Kn7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IQa-jw-idv"/>
+                <constraint firstItem="Jt8-Bw-Kn7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SdH-RV-p1H"/>
+                <constraint firstAttribute="bottom" secondItem="Jt8-Bw-Kn7" secondAttribute="bottom" id="VUf-Vf-4GF"/>
+                <constraint firstAttribute="trailing" secondItem="Jt8-Bw-Kn7" secondAttribute="trailing" id="dLQ-xe-umD"/>
+            </constraints>
+            <size key="customSize" width="452" height="208"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="coverImgView" destination="Jt8-Bw-Kn7" id="iMR-rk-afX"/>
+            </connections>
+            <point key="canvasLocation" x="436.64122137404576" y="44.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+</document>

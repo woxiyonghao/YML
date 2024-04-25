@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoystickSettingView" customModule="Eggshell" customModuleProvider="target">
+            <connections>
+                <outlet property="dpadLockAlertView" destination="b13-Kg-pfb" id="uws-Ba-tFL"/>
+                <outlet property="dpadLockSwitch" destination="EVZ-GZ-CBU" id="XRY-Rt-oJv"/>
+                <outlet property="leftAlertLabel" destination="LDf-rY-GHx" id="slW-rs-oRg"/>
+                <outlet property="leftAlertView" destination="C3c-rR-Roe" id="y7Y-1N-ykG"/>
+                <outlet property="leftCenterView" destination="GkR-KZ-ztG" id="aeS-Zn-U5L"/>
+                <outlet property="leftInDeadZoneView" destination="pJm-6X-Spg" id="h3m-t2-tVu"/>
+                <outlet property="leftInDeadZoneViewWidthConstraint" destination="dOj-wN-Itw" id="BIG-tc-vei"/>
+                <outlet property="leftOutDeadZoneView" destination="w88-B9-oH0" id="zYJ-oh-P8l"/>
+                <outlet property="leftOutDeadZoneViewWidthConstraint" destination="kTq-xC-SaL" id="ofs-Xp-qj6"/>
+                <outlet property="leftTitleLabel" destination="MmN-lG-clD" id="UOv-IC-j6O"/>
+                <outlet property="rightAlertLabel" destination="B9b-hY-dZP" id="pth-Pf-jgo"/>
+                <outlet property="rightAlertView" destination="cLG-U2-cc8" id="K9I-xh-DRN"/>
+                <outlet property="rightCenterView" destination="uI2-hI-TpE" id="cdX-84-auE"/>
+                <outlet property="rightInDeadZoneView" destination="HCC-C2-ZmP" id="0Y4-cO-4zd"/>
+                <outlet property="rightInDeadZoneViewWidthConstraint" destination="oqc-zP-gW9" id="0ew-kd-dZ5"/>
+                <outlet property="rightOutDeadZoneView" destination="uh1-0W-8PC" id="Ula-XJ-D0c"/>
+                <outlet property="rightOutDeadZoneViewWidthConstraint" destination="Wuz-mE-zRX" id="mH8-QC-lk4"/>
+                <outlet property="rightTitleLabel" destination="TWn-GP-TsC" id="gM1-7Z-pOq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Joystick Dead Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmN-lG-clD" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="36" y="48" width="187" height="23"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Left Joystick Dead Zone"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-NH-UZe">
+                    <rect key="frame" x="219" y="41.666666666666664" width="36" height="35.999999999999993"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="0s6-YA-5bf"/>
+                        <constraint firstAttribute="width" constant="36" id="p0M-gk-Pc1"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="info"/>
+                    <connections>
+                        <action selector="btnActionShowLeftAlertView:" destination="-1" eventType="touchUpInside" id="yWi-QX-UQS"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Joystick Dead Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWn-GP-TsC" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="439" y="48" width="197" height="23"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Right Joystick Dead Zone"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9Q-rF-mLB">
+                    <rect key="frame" x="632" y="41.666666666666664" width="36" height="35.999999999999993"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="FJT-Ig-GgJ"/>
+                        <constraint firstAttribute="width" constant="36" id="aeA-fW-iMH"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="info"/>
+                    <connections>
+                        <action selector="btnActionShowRightAlertView:" destination="-1" eventType="touchUpInside" id="Drz-8f-dEF"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDf-rY-GHx" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="40.666666666666657" y="131" width="216.99999999999997" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="217" id="EkT-Us-9AG"/>
+                        <constraint firstAttribute="height" constant="38" id="kuV-yQ-BnF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="11"/>
+                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution."/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9b-hY-dZP" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="443.66666666666674" y="131" width="217" height="38"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="11"/>
+                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution."/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crD-cO-hJO">
+                    <rect key="frame" x="89" y="179" width="120" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w88-B9-oH0">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" red="0.96470588235294119" green="0.68627450980392157" blue="0.21568627450980393" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="w88-B9-oH0" secondAttribute="height" multiplier="1:1" id="PVx-y0-xT6"/>
+                                <constraint firstAttribute="width" constant="120" id="kTq-xC-SaL"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJm-6X-Spg">
+                            <rect key="frame" x="60" y="60" width="0.0" height="0.0"/>
+                            <color key="backgroundColor" red="0.15294117647058825" green="0.29411764705882354" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" id="dOj-wN-Itw"/>
+                                <constraint firstAttribute="width" secondItem="pJm-6X-Spg" secondAttribute="height" multiplier="1:1" id="mef-WT-T8N"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-KZ-ztG">
+                            <rect key="frame" x="55" y="55" width="10" height="10"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="KZ6-UU-tP5"/>
+                                <constraint firstAttribute="height" constant="10" id="u45-HD-uGq"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="w88-B9-oH0" firstAttribute="centerX" secondItem="crD-cO-hJO" secondAttribute="centerX" id="GKM-x7-qD1"/>
+                        <constraint firstAttribute="width" constant="120" id="Pu6-y5-87M"/>
+                        <constraint firstItem="GkR-KZ-ztG" firstAttribute="centerX" secondItem="crD-cO-hJO" secondAttribute="centerX" id="R0Q-hh-gKm"/>
+                        <constraint firstAttribute="height" constant="120" id="ev9-y8-NjK"/>
+                        <constraint firstItem="GkR-KZ-ztG" firstAttribute="centerY" secondItem="crD-cO-hJO" secondAttribute="centerY" id="ge4-WD-cwc"/>
+                        <constraint firstItem="pJm-6X-Spg" firstAttribute="centerX" secondItem="crD-cO-hJO" secondAttribute="centerX" id="j6D-CF-SMY"/>
+                        <constraint firstItem="pJm-6X-Spg" firstAttribute="centerY" secondItem="crD-cO-hJO" secondAttribute="centerY" id="lXA-3y-aX8"/>
+                        <constraint firstItem="w88-B9-oH0" firstAttribute="centerY" secondItem="crD-cO-hJO" secondAttribute="centerY" id="pil-Me-chB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="60"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au9-4l-Avb">
+                    <rect key="frame" x="492" y="179" width="120" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-0W-8PC">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.2156862745" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="uh1-0W-8PC" secondAttribute="height" multiplier="1:1" id="4zc-Cd-lIo"/>
+                                <constraint firstAttribute="width" constant="120" id="Wuz-mE-zRX"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCC-C2-ZmP">
+                            <rect key="frame" x="60" y="60" width="0.0" height="0.0"/>
+                            <color key="backgroundColor" red="0.1529411765" green="0.29411764709999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" id="oqc-zP-gW9"/>
+                                <constraint firstAttribute="width" secondItem="HCC-C2-ZmP" secondAttribute="height" multiplier="1:1" id="vlR-ei-Gh7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI2-hI-TpE">
+                            <rect key="frame" x="55" y="55" width="10" height="10"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="TQ6-0o-wq2"/>
+                                <constraint firstAttribute="height" constant="10" id="kC6-3r-w6N"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="HCC-C2-ZmP" firstAttribute="centerY" secondItem="Au9-4l-Avb" secondAttribute="centerY" id="HBP-HO-heL"/>
+                        <constraint firstItem="uI2-hI-TpE" firstAttribute="centerX" secondItem="Au9-4l-Avb" secondAttribute="centerX" id="Xjq-46-9Rt"/>
+                        <constraint firstItem="HCC-C2-ZmP" firstAttribute="centerX" secondItem="Au9-4l-Avb" secondAttribute="centerX" id="crh-RY-JO5"/>
+                        <constraint firstAttribute="height" constant="120" id="iAA-sY-G6w"/>
+                        <constraint firstAttribute="width" constant="120" id="p5x-hp-uYT"/>
+                        <constraint firstItem="uh1-0W-8PC" firstAttribute="centerY" secondItem="Au9-4l-Avb" secondAttribute="centerY" id="rKB-ft-5LA"/>
+                        <constraint firstItem="uh1-0W-8PC" firstAttribute="centerX" secondItem="Au9-4l-Avb" secondAttribute="centerX" id="wqM-We-qhS"/>
+                        <constraint firstItem="uI2-hI-TpE" firstAttribute="centerY" secondItem="Au9-4l-Avb" secondAttribute="centerY" id="yKL-eG-WkY"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="60"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swap Left Stick and D-pad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-Fh-bDO" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="36" y="329" width="183.33333333333334" height="20"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Swap Left Stick and D-pad"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVZ-GZ-CBU">
+                    <rect key="frame" x="239.33333333333337" y="323.66666666666669" width="51" height="31"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="onTintColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="15.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="switchActionDpadLock:" destination="-1" eventType="valueChanged" id="eF7-JP-JS1"/>
+                    </connections>
+                </switch>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="del-7g-rgn">
+                    <rect key="frame" x="293.33333333333331" y="321" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="eOe-4H-zrs"/>
+                        <constraint firstAttribute="width" constant="36" id="uvB-v7-PBh"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="info"/>
+                    <connections>
+                        <action selector="btnActionShowDpadLockAlertView:" destination="-1" eventType="touchUpInside" id="aoo-eQ-l35"/>
+                    </connections>
+                </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b13-Kg-pfb">
+                    <rect key="frame" x="329.33333333333331" y="331" width="209.99999999999994" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_text_bg_short" translatesAutoresizingMaskIntoConstraints="NO" id="mYL-Yv-rsC">
+                            <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When turned on, two cross keys will not be triggered at the same time." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sur-sx-1i4" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="5" y="5" width="200" height="40"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="12"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="When turned on, two cross keys will not be triggered at the same time."/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="mYL-Yv-rsC" secondAttribute="bottom" id="6BX-A8-z0D"/>
+                        <constraint firstAttribute="trailing" secondItem="mYL-Yv-rsC" secondAttribute="trailing" id="LHO-8q-nt8"/>
+                        <constraint firstItem="Sur-sx-1i4" firstAttribute="leading" secondItem="b13-Kg-pfb" secondAttribute="leading" constant="5" id="Lkd-JI-kGq"/>
+                        <constraint firstItem="mYL-Yv-rsC" firstAttribute="leading" secondItem="b13-Kg-pfb" secondAttribute="leading" id="YWe-EH-onl"/>
+                        <constraint firstAttribute="trailing" secondItem="Sur-sx-1i4" secondAttribute="trailing" constant="5" id="YWp-wQ-teZ"/>
+                        <constraint firstAttribute="height" constant="50" id="caF-VU-CBn"/>
+                        <constraint firstItem="Sur-sx-1i4" firstAttribute="top" secondItem="b13-Kg-pfb" secondAttribute="top" constant="5" id="ng9-T1-DrG"/>
+                        <constraint firstItem="mYL-Yv-rsC" firstAttribute="top" secondItem="b13-Kg-pfb" secondAttribute="top" id="pP3-al-om1"/>
+                        <constraint firstAttribute="bottom" secondItem="Sur-sx-1i4" secondAttribute="bottom" constant="5" id="qBb-fs-KMq"/>
+                        <constraint firstAttribute="width" constant="210" id="tL7-UG-kvI"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3c-rR-Roe">
+                    <rect key="frame" x="228" y="76" width="210" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_text_bg_short" translatesAutoresizingMaskIntoConstraints="NO" id="7zW-5Z-gN7">
+                            <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEU-h7-OqR" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="5" y="5" width="200" height="40"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="11"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution."/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="7zW-5Z-gN7" firstAttribute="top" secondItem="C3c-rR-Roe" secondAttribute="top" id="Bxg-6Y-tOl"/>
+                        <constraint firstAttribute="bottom" secondItem="7zW-5Z-gN7" secondAttribute="bottom" id="HEJ-fv-uQV"/>
+                        <constraint firstAttribute="trailing" secondItem="tEU-h7-OqR" secondAttribute="trailing" constant="5" id="RNq-vj-FFa"/>
+                        <constraint firstItem="7zW-5Z-gN7" firstAttribute="leading" secondItem="C3c-rR-Roe" secondAttribute="leading" id="XQb-um-wP7"/>
+                        <constraint firstAttribute="trailing" secondItem="7zW-5Z-gN7" secondAttribute="trailing" id="d61-fJ-jcM"/>
+                        <constraint firstItem="tEU-h7-OqR" firstAttribute="leading" secondItem="C3c-rR-Roe" secondAttribute="leading" constant="5" id="d9n-Ma-pLH"/>
+                        <constraint firstAttribute="width" constant="210" id="ee4-2b-y0V"/>
+                        <constraint firstItem="tEU-h7-OqR" firstAttribute="top" secondItem="C3c-rR-Roe" secondAttribute="top" constant="5" id="h8p-G3-rLc"/>
+                        <constraint firstAttribute="height" constant="50" id="iJL-Vp-wcW"/>
+                        <constraint firstAttribute="bottom" secondItem="tEU-h7-OqR" secondAttribute="bottom" constant="5" id="vau-CD-rvl"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-U2-cc8">
+                    <rect key="frame" x="642" y="76" width="210" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_text_bg_short" translatesAutoresizingMaskIntoConstraints="NO" id="x2N-Xn-vxz">
+                            <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-pk-Lc6" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="5" y="5" width="200" height="40"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="11"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Please note: When the dead zone is less than 10, it may cause the joystick to drift, so please use it with caution."/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="SKe-pk-Lc6" secondAttribute="trailing" constant="5" id="635-rm-N5X"/>
+                        <constraint firstAttribute="bottom" secondItem="x2N-Xn-vxz" secondAttribute="bottom" id="A5o-xh-znx"/>
+                        <constraint firstItem="x2N-Xn-vxz" firstAttribute="leading" secondItem="cLG-U2-cc8" secondAttribute="leading" id="DYX-zo-Luf"/>
+                        <constraint firstAttribute="bottom" secondItem="SKe-pk-Lc6" secondAttribute="bottom" constant="5" id="Rjd-EH-s2z"/>
+                        <constraint firstItem="SKe-pk-Lc6" firstAttribute="leading" secondItem="cLG-U2-cc8" secondAttribute="leading" constant="5" id="dkT-bx-uBW"/>
+                        <constraint firstAttribute="trailing" secondItem="x2N-Xn-vxz" secondAttribute="trailing" id="eOp-jE-Vlg"/>
+                        <constraint firstAttribute="width" constant="210" id="f8Z-DV-WxD"/>
+                        <constraint firstItem="SKe-pk-Lc6" firstAttribute="top" secondItem="cLG-U2-cc8" secondAttribute="top" constant="5" id="gux-mg-Yli"/>
+                        <constraint firstAttribute="height" constant="50" id="sGq-Qo-TWx"/>
+                        <constraint firstItem="x2N-Xn-vxz" firstAttribute="top" secondItem="cLG-U2-cc8" secondAttribute="top" id="yQz-Su-pwh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Au9-4l-Avb" firstAttribute="leading" secondItem="TWn-GP-TsC" secondAttribute="leading" constant="53" id="2BQ-Ad-FHG"/>
+                <constraint firstItem="C3c-rR-Roe" firstAttribute="top" secondItem="MmN-lG-clD" secondAttribute="bottom" constant="5" id="3TL-fP-28a"/>
+                <constraint firstItem="MmN-lG-clD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="48" id="7W5-U3-ZUS"/>
+                <constraint firstItem="B9b-hY-dZP" firstAttribute="width" secondItem="LDf-rY-GHx" secondAttribute="width" id="A6M-uR-leo"/>
+                <constraint firstItem="EVZ-GZ-CBU" firstAttribute="leading" secondItem="Xkj-Fh-bDO" secondAttribute="trailing" constant="20" id="Amg-Wd-WkP"/>
+                <constraint firstItem="I9Q-rF-mLB" firstAttribute="centerY" secondItem="TWn-GP-TsC" secondAttribute="centerY" id="Ank-N5-5hg"/>
+                <constraint firstItem="cLG-U2-cc8" firstAttribute="top" secondItem="C3c-rR-Roe" secondAttribute="top" id="B1D-Kw-KHe"/>
+                <constraint firstItem="crD-cO-hJO" firstAttribute="top" secondItem="LDf-rY-GHx" secondAttribute="bottom" constant="10" id="CCz-e8-XJ3"/>
+                <constraint firstItem="crD-cO-hJO" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="leading" constant="53" id="D77-g0-5CZ"/>
+                <constraint firstItem="Xkj-Fh-bDO" firstAttribute="top" secondItem="crD-cO-hJO" secondAttribute="bottom" constant="30" id="EYw-zI-jIv"/>
+                <constraint firstItem="TWn-GP-TsC" firstAttribute="centerY" secondItem="MmN-lG-clD" secondAttribute="centerY" id="GLP-0E-ueS"/>
+                <constraint firstItem="3Uw-NH-UZe" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="trailing" constant="-4" id="HdU-80-OKx"/>
+                <constraint firstItem="Xkj-Fh-bDO" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="leading" id="JMG-OK-P5V"/>
+                <constraint firstItem="LDf-rY-GHx" firstAttribute="top" secondItem="MmN-lG-clD" secondAttribute="bottom" constant="60" id="JZF-ve-NIU"/>
+                <constraint firstItem="EVZ-GZ-CBU" firstAttribute="centerY" secondItem="Xkj-Fh-bDO" secondAttribute="centerY" id="Lyl-Nj-exm"/>
+                <constraint firstItem="Au9-4l-Avb" firstAttribute="top" secondItem="crD-cO-hJO" secondAttribute="top" id="OjH-nW-488"/>
+                <constraint firstItem="B9b-hY-dZP" firstAttribute="top" secondItem="LDf-rY-GHx" secondAttribute="top" id="U4b-Hc-GFs"/>
+                <constraint firstItem="B9b-hY-dZP" firstAttribute="height" secondItem="LDf-rY-GHx" secondAttribute="height" id="cAr-FR-RKu"/>
+                <constraint firstItem="cLG-U2-cc8" firstAttribute="leading" secondItem="TWn-GP-TsC" secondAttribute="trailing" constant="6" id="dTF-9I-3Dt"/>
+                <constraint firstItem="TWn-GP-TsC" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="trailing" constant="216" id="ddu-pT-I5e"/>
+                <constraint firstItem="b13-Kg-pfb" firstAttribute="top" secondItem="del-7g-rgn" secondAttribute="top" constant="10" id="fgb-2v-kHE"/>
+                <constraint firstItem="MmN-lG-clD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="36" id="h45-JW-BOR"/>
+                <constraint firstItem="LDf-rY-GHx" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="leading" constant="4.5" id="jb3-BC-ela"/>
+                <constraint firstItem="C3c-rR-Roe" firstAttribute="leading" secondItem="MmN-lG-clD" secondAttribute="trailing" constant="5" id="mjO-kW-qIa"/>
+                <constraint firstItem="del-7g-rgn" firstAttribute="leading" secondItem="EVZ-GZ-CBU" secondAttribute="trailing" constant="5" id="nM0-YW-c0X"/>
+                <constraint firstItem="I9Q-rF-mLB" firstAttribute="leading" secondItem="TWn-GP-TsC" secondAttribute="trailing" constant="-4" id="pko-bd-Zvp"/>
+                <constraint firstItem="3Uw-NH-UZe" firstAttribute="centerY" secondItem="MmN-lG-clD" secondAttribute="centerY" id="sAK-3l-nSs"/>
+                <constraint firstItem="b13-Kg-pfb" firstAttribute="leading" secondItem="del-7g-rgn" secondAttribute="trailing" id="sbD-1j-EvF"/>
+                <constraint firstItem="del-7g-rgn" firstAttribute="centerY" secondItem="Xkj-Fh-bDO" secondAttribute="centerY" id="uF4-tt-9ya"/>
+                <constraint firstItem="B9b-hY-dZP" firstAttribute="leading" secondItem="TWn-GP-TsC" secondAttribute="leading" constant="4.5" id="zzw-df-pBK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="120" y="-11"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="B9b-hY-dZP">
+            <size key="intrinsicContentSize" width="588.66666666666663" height="15.666666666666666"/>
+        </designable>
+        <designable name="LDf-rY-GHx">
+            <size key="intrinsicContentSize" width="588.66666666666663" height="15.666666666666666"/>
+        </designable>
+        <designable name="MmN-lG-clD">
+            <size key="intrinsicContentSize" width="187" height="22.666666666666668"/>
+        </designable>
+        <designable name="SKe-pk-Lc6">
+            <size key="intrinsicContentSize" width="588.66666666666663" height="15.666666666666666"/>
+        </designable>
+        <designable name="Sur-sx-1i4">
+            <size key="intrinsicContentSize" width="405.33333333333331" height="17"/>
+        </designable>
+        <designable name="TWn-GP-TsC">
+            <size key="intrinsicContentSize" width="197" height="22.666666666666668"/>
+        </designable>
+        <designable name="Xkj-Fh-bDO">
+            <size key="intrinsicContentSize" width="183.33333333333334" height="19.666666666666668"/>
+        </designable>
+        <designable name="tEU-h7-OqR">
+            <size key="intrinsicContentSize" width="588.66666666666663" height="15.666666666666666"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="alert_text_bg_short" width="210" height="50"/>
+        <image name="info" width="16" height="16"/>
+    </resources>
+</document>

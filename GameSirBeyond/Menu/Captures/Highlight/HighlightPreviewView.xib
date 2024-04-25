@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HighlightPreviewView" customModule="Eggshell" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="O2H-EJ-gTk" id="pek-DV-VoM"/>
+                <outlet property="cancelButton" destination="Zd9-fl-dOf" id="xfg-jt-6Mq"/>
+                <outlet property="subTitleLabel" destination="qRC-84-viQ" id="0d4-b6-R0o"/>
+                <outlet property="titleLabel" destination="rIl-zJ-JwN" id="5IJ-yk-ufC"/>
+                <outlet property="uploadButton" destination="anM-it-wXC" id="Od2-4y-Rxe"/>
+                <outlet property="videoBgView" destination="neB-Zg-SWx" id="SZe-iO-voq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预览" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIl-zJ-JwN">
+                    <rect key="frame" x="406" y="20" width="40" height="28"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他人可见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-84-viQ">
+                    <rect key="frame" x="395" y="58" width="62" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neB-Zg-SWx">
+                    <rect key="frame" x="226" y="104" width="400" height="185"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="f4O-lg-hBX"/>
+                        <constraint firstAttribute="width" secondItem="neB-Zg-SWx" secondAttribute="height" multiplier="2.16:1" id="wsw-X2-azu"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-EJ-gTk" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="46" y="342" width="80" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="hBr-py-c5M"/>
+                        <constraint firstAttribute="height" constant="34" id="hkD-XR-qXg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title=" Back" image="gamepad_key_b">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="i18nTextNormal" value=" Back"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zd9-fl-dOf" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="161" y="342" width="80" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="XDB-CS-cny"/>
+                        <constraint firstAttribute="height" constant="34" id="kaU-59-9gt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  取消" image="gamepad_key_x">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anM-it-wXC" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="701" y="336" width="105" height="46"/>
+                    <color key="backgroundColor" name="color_gamepad_button_bg"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="IJV-Ba-3L6"/>
+                        <constraint firstAttribute="height" constant="46" id="t8P-H7-WOw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  上传" image="gamepad_key_a">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qRC-84-viQ" firstAttribute="top" secondItem="rIl-zJ-JwN" secondAttribute="bottom" constant="10" id="2H1-pT-BGn"/>
+                <constraint firstItem="anM-it-wXC" firstAttribute="centerY" secondItem="O2H-EJ-gTk" secondAttribute="centerY" id="BwJ-9Z-KZR"/>
+                <constraint firstItem="qRC-84-viQ" firstAttribute="centerX" secondItem="rIl-zJ-JwN" secondAttribute="centerX" id="CpF-kf-gID"/>
+                <constraint firstAttribute="trailing" secondItem="anM-it-wXC" secondAttribute="trailing" constant="46" id="KlX-6X-va9"/>
+                <constraint firstItem="Zd9-fl-dOf" firstAttribute="leading" secondItem="O2H-EJ-gTk" secondAttribute="trailing" constant="35" id="OSf-9b-JQS"/>
+                <constraint firstItem="O2H-EJ-gTk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="46" id="TNF-Dt-eK1"/>
+                <constraint firstItem="neB-Zg-SWx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="f1L-vJ-yLL"/>
+                <constraint firstItem="neB-Zg-SWx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iBn-0Y-kfy"/>
+                <constraint firstItem="Zd9-fl-dOf" firstAttribute="centerY" secondItem="O2H-EJ-gTk" secondAttribute="centerY" id="lWI-pK-NId"/>
+                <constraint firstItem="rIl-zJ-JwN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mmR-Kf-ihq"/>
+                <constraint firstItem="rIl-zJ-JwN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="rX5-om-MxY"/>
+                <constraint firstAttribute="bottom" secondItem="O2H-EJ-gTk" secondAttribute="bottom" constant="17" id="rix-LI-7pD"/>
+            </constraints>
+            <point key="canvasLocation" x="131.69014084507043" y="-11.450381679389313"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="O2H-EJ-gTk">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+        <designable name="Zd9-fl-dOf">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+        <designable name="anM-it-wXC">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="gamepad_key_a" width="12" height="12"/>
+        <image name="gamepad_key_b" width="12" height="12"/>
+        <image name="gamepad_key_x" width="12" height="12"/>
+        <namedColor name="color_gamepad_button_bg">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

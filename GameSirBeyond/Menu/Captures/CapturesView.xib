@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CapturesView" customModule="Eggshell" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="Jxn-Kj-UsE" id="f3D-vY-klD"/>
+                <outlet property="backButton1" destination="Xc5-nK-1hH" id="q9Z-jk-daq"/>
+                <outlet property="backButton2" destination="TRv-CT-hs5" id="fY0-tD-Va6"/>
+                <outlet property="collectionView" destination="FhN-ua-1kY" id="asM-VM-eJu"/>
+                <outlet property="deleteButton" destination="sz6-UE-LSN" id="S1c-3K-xqC"/>
+                <outlet property="leftView" destination="NJT-EY-Zml" id="WN9-gJ-gbA"/>
+                <outlet property="openButton" destination="jUL-Lr-b4B" id="sbv-E0-7oK"/>
+                <outlet property="operationButtonsView" destination="9ry-KN-sZN" id="zUl-Ka-fd5"/>
+                <outlet property="rightView" destination="ehZ-9w-d9y" id="l66-pB-uNd"/>
+                <outlet property="saveButton" destination="NAc-gt-hYc" id="YUz-I8-m3M"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-EY-Zml">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="393"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc5-nK-1hH" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="30" y="33" width="45" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="Qpv-Uh-Qzj"/>
+                                <constraint firstAttribute="height" constant="25" id="eKT-uQ-jRT"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="back"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-QI-qv0" customClass="I18nLabel" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="75" y="29" width="99.333333333333314" height="33"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="23"/>
+                            <color key="textColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="i18nText" value="Captures"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-Kj-UsE" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="57.666666666666657" y="328" width="105" height="50"/>
+                            <color key="backgroundColor" name="color_gamepad_button_bg"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="BA0-Jg-b11"/>
+                                <constraint firstAttribute="width" constant="105" id="Rru-tf-igw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="  添加" image="gamepad_key_menu">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="b5j-QI-qv0" firstAttribute="leading" secondItem="Xc5-nK-1hH" secondAttribute="trailing" id="QGn-5w-B4E"/>
+                        <constraint firstItem="Jxn-Kj-UsE" firstAttribute="centerX" secondItem="NJT-EY-Zml" secondAttribute="centerX" constant="10" id="Wak-va-n40"/>
+                        <constraint firstAttribute="bottom" secondItem="Jxn-Kj-UsE" secondAttribute="bottom" constant="15" id="XQt-uq-0Ro"/>
+                        <constraint firstItem="b5j-QI-qv0" firstAttribute="centerY" secondItem="Xc5-nK-1hH" secondAttribute="centerY" id="kun-DZ-xf5"/>
+                        <constraint firstAttribute="width" constant="200" id="lXW-f9-8li"/>
+                        <constraint firstItem="Xc5-nK-1hH" firstAttribute="top" secondItem="NJT-EY-Zml" secondAttribute="top" constant="33" id="seQ-Tm-o6R"/>
+                        <constraint firstItem="Xc5-nK-1hH" firstAttribute="leading" secondItem="NJT-EY-Zml" secondAttribute="leading" constant="30" id="wzH-YK-KYP"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-9w-d9y">
+                    <rect key="frame" x="200" y="0.0" width="652" height="393"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FhN-ua-1kY">
+                            <rect key="frame" x="0.0" y="0.0" width="652" height="393"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aLA-fp-0r6">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="FhN-ua-1kY" secondAttribute="bottom" id="cWo-Qg-PLW"/>
+                        <constraint firstItem="FhN-ua-1kY" firstAttribute="top" secondItem="ehZ-9w-d9y" secondAttribute="top" id="mGj-zY-ThY"/>
+                        <constraint firstItem="FhN-ua-1kY" firstAttribute="leading" secondItem="ehZ-9w-d9y" secondAttribute="leading" id="qMe-ZT-e9k"/>
+                        <constraint firstAttribute="trailing" secondItem="FhN-ua-1kY" secondAttribute="trailing" id="voP-kA-tgb"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-CT-hs5" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="743" y="342" width="80" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="YGr-B4-n2d"/>
+                        <constraint firstAttribute="width" constant="80" id="k0V-bx-Tfe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title=" 返回" image="gamepad_key_b">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oye-4z-XI0" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                    <rect key="frame" x="752" y="293" width="71" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="9Iw-my-8jF"/>
+                        <constraint firstAttribute="width" constant="71" id="Aho-KO-JB4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title=" 测试分享">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnActionTestShare" destination="-1" eventType="touchUpInside" id="R1V-nP-Vh1"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ry-KN-sZN">
+                    <rect key="frame" x="446" y="342" width="260" height="34"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sz6-UE-LSN" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="180" y="0.0" width="80" height="34"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="O78-WV-Afb"/>
+                                <constraint firstAttribute="height" constant="34" id="r0q-Pw-eVu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title=" 删除" image="gamepad_key_y">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="17"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAc-gt-hYc" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="90" y="0.0" width="80" height="34"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="L6V-cV-grI"/>
+                                <constraint firstAttribute="height" constant="34" id="Y7L-Zn-V6h"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title=" 保存" image="gamepad_key_x">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="17"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUL-Lr-b4B" customClass="AnimatedButton" customModule="Eggshell" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="HWM-mq-tca"/>
+                                <constraint firstAttribute="width" constant="80" id="rII-WP-l6f"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title=" 打开" image="gamepad_key_a">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="17"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sz6-UE-LSN" secondAttribute="trailing" id="1CW-dQ-9Hc"/>
+                        <constraint firstItem="NAc-gt-hYc" firstAttribute="centerY" secondItem="9ry-KN-sZN" secondAttribute="centerY" id="5Yl-44-68q"/>
+                        <constraint firstAttribute="width" constant="260" id="Fze-ih-SkV"/>
+                        <constraint firstItem="NAc-gt-hYc" firstAttribute="centerX" secondItem="9ry-KN-sZN" secondAttribute="centerX" id="KbA-OJ-bS0"/>
+                        <constraint firstItem="sz6-UE-LSN" firstAttribute="centerY" secondItem="9ry-KN-sZN" secondAttribute="centerY" id="VFg-dI-O62"/>
+                        <constraint firstItem="jUL-Lr-b4B" firstAttribute="centerY" secondItem="9ry-KN-sZN" secondAttribute="centerY" id="cd6-WG-2AI"/>
+                        <constraint firstItem="jUL-Lr-b4B" firstAttribute="leading" secondItem="9ry-KN-sZN" secondAttribute="leading" id="x9Z-pr-Nx3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ehZ-9w-d9y" secondAttribute="trailing" id="3aj-oH-h9v"/>
+                <constraint firstItem="TRv-CT-hs5" firstAttribute="top" secondItem="Oye-4z-XI0" secondAttribute="bottom" constant="15" id="4JL-gT-Scm"/>
+                <constraint firstItem="ehZ-9w-d9y" firstAttribute="leading" secondItem="NJT-EY-Zml" secondAttribute="trailing" id="Bg9-Y9-Px6"/>
+                <constraint firstAttribute="bottom" secondItem="ehZ-9w-d9y" secondAttribute="bottom" id="Gm3-ml-OrK"/>
+                <constraint firstItem="ehZ-9w-d9y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H39-Gf-Ojo"/>
+                <constraint firstItem="Oye-4z-XI0" firstAttribute="trailing" secondItem="TRv-CT-hs5" secondAttribute="trailing" id="Qfd-qg-Sta"/>
+                <constraint firstItem="TRv-CT-hs5" firstAttribute="leading" secondItem="9ry-KN-sZN" secondAttribute="trailing" constant="37" id="VFZ-BI-Av0"/>
+                <constraint firstAttribute="bottom" secondItem="TRv-CT-hs5" secondAttribute="bottom" constant="17" id="YPB-iV-qss"/>
+                <constraint firstItem="9ry-KN-sZN" firstAttribute="height" secondItem="TRv-CT-hs5" secondAttribute="height" id="bFJ-Nf-6cR"/>
+                <constraint firstAttribute="bottom" secondItem="NJT-EY-Zml" secondAttribute="bottom" id="cPD-sj-2br"/>
+                <constraint firstAttribute="trailing" secondItem="TRv-CT-hs5" secondAttribute="trailing" constant="29" id="dT7-vW-GHr"/>
+                <constraint firstItem="NJT-EY-Zml" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="igG-oq-zKv"/>
+                <constraint firstItem="9ry-KN-sZN" firstAttribute="centerY" secondItem="TRv-CT-hs5" secondAttribute="centerY" id="kir-WT-RZn"/>
+                <constraint firstItem="NJT-EY-Zml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vd9-DZ-9KJ"/>
+            </constraints>
+            <point key="canvasLocation" x="131.51658767772511" y="-12.307692307692307"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Jxn-Kj-UsE">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+        <designable name="NAc-gt-hYc">
+            <size key="intrinsicContentSize" width="45" height="20"/>
+        </designable>
+        <designable name="Oye-4z-XI0">
+            <size key="intrinsicContentSize" width="61" height="32"/>
+        </designable>
+        <designable name="TRv-CT-hs5">
+            <size key="intrinsicContentSize" width="45" height="20"/>
+        </designable>
+        <designable name="Xc5-nK-1hH">
+            <size key="intrinsicContentSize" width="16.666666666666668" height="28.666666666666668"/>
+        </designable>
+        <designable name="b5j-QI-qv0">
+            <size key="intrinsicContentSize" width="99.333333333333329" height="32.333333333333336"/>
+        </designable>
+        <designable name="jUL-Lr-b4B">
+            <size key="intrinsicContentSize" width="45" height="20"/>
+        </designable>
+        <designable name="sz6-UE-LSN">
+            <size key="intrinsicContentSize" width="45" height="20"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="back" width="16.666666030883789" height="28.666666030883789"/>
+        <image name="gamepad_key_a" width="12" height="12"/>
+        <image name="gamepad_key_b" width="12" height="12"/>
+        <image name="gamepad_key_menu" width="12" height="12"/>
+        <image name="gamepad_key_x" width="12" height="12"/>
+        <image name="gamepad_key_y" width="12" height="12"/>
+        <namedColor name="color_gamepad_button_bg">
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

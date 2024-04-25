@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsContentClickView" customModule="Eggshell" customModuleProvider="target">
+            <connections>
+                <outlet property="arrowImageView" destination="cgM-Qp-jlM" id="yWU-aI-B8U"/>
+                <outlet property="arrowImageViewHeightConstraint" destination="CdE-wD-B9B" id="MZL-uL-gGd"/>
+                <outlet property="arrowImageViewWidthConstraint" destination="cDD-QR-FlC" id="BO6-KG-yXY"/>
+                <outlet property="contentLabel" destination="rCz-VB-aBr" id="wBp-HO-0iU"/>
+                <outlet property="titleLabel" destination="4dG-xP-twH" id="WoI-sW-fno"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="82"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCz-VB-aBr">
+                    <rect key="frame" x="410" y="41" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dG-xP-twH">
+                    <rect key="frame" x="14.999999999999998" y="31.333333333333329" width="29.333333333333329" height="19.666666666666671"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="cgM-Qp-jlM">
+                    <rect key="frame" x="410" y="41" width="0.0" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="CdE-wD-B9B"/>
+                        <constraint firstAttribute="width" id="cDD-QR-FlC"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cgM-Qp-jlM" secondAttribute="trailing" constant="16" id="0fX-6L-KeS"/>
+                <constraint firstItem="4dG-xP-twH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="EQq-np-vFf"/>
+                <constraint firstItem="rCz-VB-aBr" firstAttribute="centerY" secondItem="4dG-xP-twH" secondAttribute="centerY" id="Fo4-g2-sgF"/>
+                <constraint firstItem="4dG-xP-twH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KHz-vF-Rel"/>
+                <constraint firstItem="cgM-Qp-jlM" firstAttribute="centerY" secondItem="4dG-xP-twH" secondAttribute="centerY" id="g9d-aP-EGc"/>
+                <constraint firstItem="cgM-Qp-jlM" firstAttribute="leading" secondItem="rCz-VB-aBr" secondAttribute="trailing" id="kDj-tS-cSu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="107.63358778625954" y="152.11267605633805"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_right" width="9" height="15"/>
+    </resources>
+</document>
