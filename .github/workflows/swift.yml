@@ -23,8 +23,6 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'iphoneos' }}
         run: |
-          xcrun instruments -w 'iPhone 13 (15.0)' || sleep 15
           xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond 
      
