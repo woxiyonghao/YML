@@ -23,5 +23,4 @@ jobs:
           echo $default | cat >default
           echo Using default scheme: $default
       - name: Build and upload
-        run: bundle exec fastlane build_adhoc --env adhoc 
-    
+        run: swift --version # Swift 5.1.0
