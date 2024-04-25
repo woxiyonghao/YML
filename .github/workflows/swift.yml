@@ -25,6 +25,6 @@ jobs:
           scheme: ${{ 'default' }}
           platform: ${{ 'My Mac (Designed For iPad)' }}
         run: |
-          xcodebuild clean -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond -configuration${Debug,Release}  -UseNewBuildSystem=NO
+          xcodebuild clean build -workspace GameSirBeyond.xcworkspace -scheme GameSirBeyond   -UseNewBuildSystem=NO  -dry-run
 
     
