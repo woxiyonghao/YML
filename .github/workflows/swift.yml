@@ -1,32 +1,44 @@
-name: iOS starter workflow
+name: Xcode Build and Test
 
-on:
-  push:
-    branches: [ "main"]
-  pull_request:
-    branches: [ "main"]
+on: [push]
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build and Test
     runs-on: macos-latest
-
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      #- name: Setup Cocoapods
-        #run: |
-          #sudo gem install cocoapods
-          #pod install
-      - name: Get swift version
-        run: swift --version 
-      - name: Build
-        run: swift build
-      - name: Run tests
-        run: swift test
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Xcode
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: '13.0' # 根据你的项目需要设置具体的 Xcode 版本
+
+    - name: Check for Podfile
+      id: podfile-check
+      run: test -f Podfile && echo "Podfile exists" || echo "Podfile does not exist"
+
+    - name: Install CocoaPods
+      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
+      run: sudo gem install cocoapods
+      
+    - name: Install dependencies
+      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
+      run: pod install
+      working-directory: YourProjectFolder # 指定你的项目文件夹路径
+      
+    - name: Modify Xcode project settings
+      if: steps.podfile-check.outputs.stdout == 'Podfile exists'
+      run: |
+        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -showBuildSettings > build_settings.txt
+        sed -i '' 's/EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64 //g' build_settings.txt
+        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -showBuildSettings > build_settings_updated.txt
+        diff build_settings.txt build_settings_updated.txt || true
+      working-directory: YourProjectFolder # 指定你的项目文件夹路径
+
+    - name: Build and Test
+      run: xcodebuild test -workspace YourProject.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      working-directory: YourProjectFolder # 指定你的项目文件夹路径
+
