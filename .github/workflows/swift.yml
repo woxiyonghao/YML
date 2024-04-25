@@ -14,11 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
-      - name: Install Cocoapods
-        run: bundle install | bundle exec pod install 
- 
-      - name: Run Tests
+      - name: Build
+        run: swift build
+      - name: Run tests
         run: swift test
 
     
