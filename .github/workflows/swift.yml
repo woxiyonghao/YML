@@ -21,7 +21,8 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
-
+          
+      # 检查是否已安装gem
       - name: Check if Gemfile exists
         id: gemfile
         run: |
@@ -37,7 +38,8 @@ jobs:
         if: steps.gemfile.outputs.need_gem_install == 'true'
         run: |
           sudo apt-get install -y ruby-full
-
+          
+      # 检查Podfile
       - name: Check if Podfile exists
         id: podfile
         run: |
@@ -48,7 +50,7 @@ jobs:
             echo "Podfile does not exist"
             echo "::set-output name=need_pod_install::false"
           fi
-      
+      # 是否安装cocoapod，pod 更新整体。(需运行一次update)
       - name: Install CocoaPods if needed
         if: steps.podfile.outputs.need_pod_install == 'true'
         run: |
