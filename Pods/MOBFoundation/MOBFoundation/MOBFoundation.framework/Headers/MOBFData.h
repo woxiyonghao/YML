@@ -183,6 +183,14 @@
 + (void)writeInt16:(int16_t)value toData:(NSMutableData *)data;
 
 /**
+ *  写入一个64位整数到数据对象中
+ *
+ *  @param value 整数值
+ *  @param data  数据对象
+ */
++ (void)writeInt64:(int64_t)value toData:(NSMutableData *)data;
+
+/**
  *  读取一个16位整数
  *
  *  @param data   数据对象

@@ -65,6 +65,45 @@
 + (void)registerAppKey:(NSString * _Nonnull)appKey
              appSecret:(NSString * _Nonnull)appSecret;
 
+/**
+ 注册appKey、appSecret
+
+ @param appKey appKey
+ @param appSecret appSecret
+ @param privacyLevel 隐私协议级别(需要同意一次=2,不需要同意=0,建议使用2,避免政策变动，功能不可用)
+ */
++ (void)registerAppKey:(NSString * _Nonnull)appKey
+             appSecret:(NSString * _Nonnull)appSecret
+          privacyLevel:(int)level;
+
+/**
+ 注册appKey、appSecret
+
+ @param appKey appKey
+ @param appSecret appSecret
+ @param privacyLevel 隐私协议级别(需要同意一次=2,不需要同意=0,建议使用2,避免政策变动，功能不可用)
+ @param force 强制https
+
+ */
++ (void)registerAppKey:(NSString * _Nonnull)appKey
+             appSecret:(NSString * _Nonnull)appSecret
+          privacyLevel:(int)level
+            forceHttps:(BOOL)force;
+
+/**
+ 强制https
+ 
+ @param force 是否强制https
+ */
++ (void)forceHttps:(BOOL)force;
+
+/**
+ 设置隐私等级
+ 
+ @param level 隐私协议级别(需要同意一次=2,不需要同意=0,建议使用2,避免政策变动，功能不可用)
+ */
++ (void)setPrivacyLevel:(int)level;
+
 #pragma mark - User
 
 

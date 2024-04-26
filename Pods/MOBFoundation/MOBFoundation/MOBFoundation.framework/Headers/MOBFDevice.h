@@ -43,6 +43,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)deviceModel;
 
 /**
+ *  获取设备型号
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 设备型号
+ */
++ (NSString *)deviceModel:(BOOL)canCache;
+
+/**
  *  获取当前网络类型
  *
  *  @return 网络类型
@@ -133,6 +141,15 @@ extern NSString *kMOBFReachabilityChangedNotification;
  */
 + (NSString *)carrierNameByCarrier:(CTCarrier*)carrier;
 
+
+/**
+ *  获取手机运营商名称-指定CTCarrier
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商名称
+ */
++ (NSString *)carrierNameByCarrier:(CTCarrier*)carrier canCache:(BOOL)canCache;
+
 /**
  *  获取手机运营商国家码
  *
@@ -154,6 +171,16 @@ extern NSString *kMOBFReachabilityChangedNotification;
  *  @return 运营商国家码
  */
 + (NSString *)mobileCountryCodeByCarrier:(CTCarrier*)carrier;
+
+
+/**
+ *  获取手机运营商国家码--指定CTCarrier
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商国家码
+ */
++ (NSString *)mobileCountryCodeByCarrier:(CTCarrier*)carrier canCache:(BOOL)canCache;
+
 /**
  *  获取手机运营商网络编号
  *
@@ -175,6 +202,16 @@ extern NSString *kMOBFReachabilityChangedNotification;
  *  @return 运营商网络编号
  */
 + (NSString *)mobileNetworkCodeByCarrier:(CTCarrier*)carrier;
+
+
+/**
+ *  获取手机运营商网络编号--指定CTCarrier
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商网络编号
+ */
++ (NSString *)mobileNetworkCodeByCarrier:(CTCarrier*)carrier canCache:(BOOL)canCache;
+
 /**
  *  与当前系统版本比较
  *
@@ -190,6 +227,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
  *  @return YES 已经越狱，NO 尚未越狱
  */
 + (BOOL)hasJailBroken;
+
+/**
+ *  判断是否已经越狱
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return YES 已经越狱，NO 尚未越狱
+ */
++ (BOOL)hasJailBroken:(BOOL)canCache;
 
 /**
  *  获取运行进程信息
@@ -229,6 +274,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (CGSize)nativeScreenSize:(BOOL)canCache;
 
 /**
+ *  获取屏幕真实尺寸
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 屏幕尺寸
+ */
++ (NSString*)nativeScreenSizeStr:(BOOL)canCache;
+
+/**
  *  获取无线局域网的服务集标识（WIFI名称）
  *
  *  @return 服务集标识
@@ -266,6 +319,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
  *  @return 语言描述
  */
 + (NSString *)currentLanguage;
+
+/**
+ *  获取当前语言
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 语言描述
+ */
++ (NSString *)currentLanguage:(BOOL)canCache;
 
 /**
  *  获取设备IP地址
@@ -309,11 +370,26 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (double)physicalMemory;
 
 /**
+ *  获取物理内存
+ *  @param canCache 使用冷启动后的缓存
+ @return 物理内存
+ */
++ (double)physicalMemory:(BOOL)canCache;
+
+/**
  *  获取存储大小
 
  @return 存储大小
  */
 + (long long)diskSpace;
+
+
+/**
+ *  获取存储大小
+ *  @param canCache 使用冷启动后的缓存
+ @return 存储大小
+ */
++ (long long)diskSpace:(BOOL)canCache;
 
 /**
  *  获取剩余存储大小
@@ -322,12 +398,29 @@ extern NSString *kMOBFReachabilityChangedNotification;
  */
 + (unsigned long long)freeDiskSpace;
 
+
+/**
+ *  获取剩余存储大小
+ *
+ *  @param canCache 使用冷启动后的缓存
+ @return 剩余存储大小
+ */
++ (unsigned long long)freeDiskSpace:(BOOL)canCache;
+
 /**
  *  cpu 类型
  *
  *  @return cpu 类型
  */
 + (NSString *)cpuType;
+
+/**
+ *  cpu 类型
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return cpu 类型
+ */
++ (NSString *)cpuType:(BOOL)canCache;
 
 /**
  *  获取无线局域网的强度
@@ -360,6 +453,13 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)systemVersion;
 
 /**
+ *  系统版本
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 系统版本
+ */
++ (NSString *)systemVersion:(BOOL)canCache;
+/**
  *  系统名称
  *
  *  @return 系统名称
@@ -367,11 +467,28 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)systemName;
 
 /**
+ *  系统名称
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 系统名称
+ */
++ (NSString *)systemName:(BOOL)canCache;
+
+/**
 *  获取设备名称 (如:iPhone 8 Plus)
 *
 *  @return 设备名称
 */
 + (NSString *)deviceName;
+
+/**
+*  获取设备名称 (如:iPhone 8 Plus)
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 设备名称
+*/
++ (NSString *)deviceName:(BOOL)canCache;
+
 
 /**
 *  设备类型
@@ -387,6 +504,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
 *  @return 机器名称
 */
 + (NSString *)machineName;
+
+/**
+*  获取机器名称 (如:x86_64)
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 机器名称
+*/
++ (NSString *)machineName:(BOOL)canCache;
 
 /**
 *  是否连接usb
@@ -435,11 +560,27 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString*)timeZone;
 
 /**
+*  时区
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 时区
+*/
++ (NSString*)timeZone:(BOOL)canCache;
+
+/**
 *  是否设置了代理
 *
 *  @return 代理
 */
 +(BOOL)hasProxy;
+
+/**
+*  是否设置了代理
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 代理
+*/
++(BOOL)hasProxy:(BOOL)canCache;
 
 /**
 *  cpu个数
@@ -454,6 +595,14 @@ extern NSString *kMOBFReachabilityChangedNotification;
 *  @return 默认字体大小
 */
 +(CGFloat)fontSize;
+
+/**
+*  字体大小
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 默认字体大小
+*/
++(CGFloat)fontSize:(BOOL)canCache;
 
 /**
 *  获取启动时间
