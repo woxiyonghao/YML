@@ -74,8 +74,8 @@ jobs:
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          cd "$scheme"
-          xcodebuild -project "$scheme".xcodeproj -scheme "$scheme" -configuration Release -archivePath /Users/runner/work/YML/YML/build/GameSirBeyond.xcarchive archive
+          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive
+          
       - name: Export IPA
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
