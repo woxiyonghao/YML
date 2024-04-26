@@ -7,7 +7,7 @@
 
 import UIKit
 import ObjectMapper
-import SwiftVideoBackground
+//import SwiftVideoBackground
 
 class ImageCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     

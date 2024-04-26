@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftVideoBackground
+//import SwiftVideoBackground
 
 class VideoCollectionViewCell: UICollectionViewCell {
 

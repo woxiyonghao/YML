@@ -294,6 +294,8 @@
 		8ED2A3142BDB4A3A00340BCC /* UIView+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F92BDB4A3A00340BCC /* UIView+YYText.m */; };
 		8ED2A3152BDB4A3A00340BCC /* YYTextAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2FC2BDB4A3A00340BCC /* YYTextAsyncLayer.m */; };
 		8ED2A3162BDB4A3A00340BCC /* YYTextWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2FD2BDB4A3A00340BCC /* YYTextWeakProxy.m */; };
+		8ED2A31C2BDB527200340BCC /* VideoBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A3192BDB527200340BCC /* VideoBackground.swift */; };
+		8ED2A31D2BDB527200340BCC /* VideoBackgroundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A31A2BDB527200340BCC /* VideoBackgroundError.swift */; };
 		8ED6EE7D2BB518EC0033F76D /* TectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE612BB518EC0033F76D /* TectView.swift */; };
 		8ED6EE7E2BB518EC0033F76D /* GameLoginWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */; };
 		8ED6EE7F2BB518EC0033F76D /* GameIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE652BB518EC0033F76D /* GameIntroduceView.swift */; };
@@ -736,6 +738,9 @@
 		8ED2A2FC2BDB4A3A00340BCC /* YYTextAsyncLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAsyncLayer.m; sourceTree = "<group>"; };
 		8ED2A2FD2BDB4A3A00340BCC /* YYTextWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextWeakProxy.m; sourceTree = "<group>"; };
 		8ED2A2FE2BDB4A3A00340BCC /* UIPasteboard+YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+YYText.h"; sourceTree = "<group>"; };
+		8ED2A3192BDB527200340BCC /* VideoBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBackground.swift; sourceTree = "<group>"; };
+		8ED2A31A2BDB527200340BCC /* VideoBackgroundError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBackgroundError.swift; sourceTree = "<group>"; };
+		8ED2A31B2BDB527200340BCC /* SwiftVideoBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftVideoBackground.h; sourceTree = "<group>"; };
 		8ED6EE612BB518EC0033F76D /* TectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TectView.swift; sourceTree = "<group>"; };
 		8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoginWelcomeView.swift; sourceTree = "<group>"; };
 		8ED6EE642BB518EC0033F76D /* GameLoginWelcome-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameLoginWelcome-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -947,6 +952,7 @@
 		28D7C7E12B9999180026F136 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				8ED2A3172BDB527200340BCC /* SwiftVideoBackground */,
 				28D7C7E22B9999180026F136 /* Extension */,
 				28D7C7E92B9999180026F136 /* PushNotifications.entitlements */,
 				28D7C7EA2B9999180026F136 /* Network */,
@@ -1871,6 +1877,24 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		8ED2A3172BDB527200340BCC /* SwiftVideoBackground */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A3182BDB527200340BCC /* Sources */,
+			);
+			path = SwiftVideoBackground;
+			sourceTree = "<group>";
+		};
+		8ED2A3182BDB527200340BCC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A3192BDB527200340BCC /* VideoBackground.swift */,
+				8ED2A31A2BDB527200340BCC /* VideoBackgroundError.swift */,
+				8ED2A31B2BDB527200340BCC /* SwiftVideoBackground.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		8ED6EE5F2BB518EC0033F76D /* GSWelcomeSign */ = {
 			isa = PBXGroup;
 			children = (
@@ -2320,6 +2344,7 @@
 				28D7C7CB2B98673D0026F136 /* GameScrollView.swift in Sources */,
 				8E29E50F2BC8DA2A00EF93BB /* GSSetterNotiViewController.swift in Sources */,
 				28F3D91C2BA7DADA008CAE39 /* AppDelegate.swift in Sources */,
+				8ED2A31C2BDB527200340BCC /* VideoBackground.swift in Sources */,
 				28D7C9392B9999A20026F136 /* CapturesView.swift in Sources */,
 				28F3D7172BA7CD32008CAE39 /* GSHorizontalFlowLayout.swift in Sources */,
 				8ED2A3092BDB4A3A00340BCC /* YYLabel.m in Sources */,
@@ -2460,6 +2485,7 @@
 				8EBADDCC2BC68021004823F8 /* TZAssetCell.m in Sources */,
 				28D7C8B02B9999180026F136 /* IQUIScrollView+Additions.swift in Sources */,
 				8ED2A3112BDB4A3A00340BCC /* NSAttributedString+YYText.m in Sources */,
+				8ED2A31D2BDB527200340BCC /* VideoBackgroundError.swift in Sources */,
 				28D7C87C2B9999180026F136 /* UIButton+Extension.swift in Sources */,
 				28D7C8942B9999180026F136 /* CLPlayerContentPanelHeadView.swift in Sources */,
 				28D7C9492B9999A20026F136 /* HighlightPreviewView.swift in Sources */,

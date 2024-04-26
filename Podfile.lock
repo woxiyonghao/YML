@@ -1057,7 +1057,6 @@ PODS:
   - SDWebImage/Core (5.18.6)
   - SnapKit (5.6.0)
   - SwiftGifOrigin (1.7.0)
-  - SwiftVideoBackground (3.4.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
   - ZIPFoundation (0.9.16)
@@ -1080,7 +1079,6 @@ DEPENDENCIES:
   - SDWebImage
   - SnapKit
   - SwiftGifOrigin
-  - SwiftVideoBackground
   - SwiftyJSON
   - Then
   - ZIPFoundation
@@ -1127,7 +1125,6 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SwiftGifOrigin
-    - SwiftVideoBackground
     - SwiftyJSON
     - Then
     - ZIPFoundation
@@ -1173,11 +1170,10 @@ SPEC CHECKSUMS:
   SDWebImage: 3d8caa2430f3d674dbb3e515df4a100a2105af5f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
-  SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZIPFoundation: d170fa8e270b2a32bef9dcdcabff5b8f1a5deced
 
-PODFILE CHECKSUM: a2891fc494220959eea65036e683d5128fbb00ad
+PODFILE CHECKSUM: ffacb329837e1c977b7696d6ecfd96395c4467aa
 
 COCOAPODS: 1.15.2

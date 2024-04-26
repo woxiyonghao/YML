@@ -11,7 +11,7 @@ pod 'SwiftyJSON'# JSON数据转换
 pod 'SDWebImage'# 图片加载
 pod 'PinCodeInputView'# 手机验证码输入框
 pod 'ObjectMapper'# Model转换工具
-pod 'SwiftVideoBackground'# 播放视频
+#pod 'SwiftVideoBackground'# 播放视频
 pod 'MJRefresh'# 下拉刷新OC库
 pod 'SwiftGifOrigin'# 加载gif
 pod 'ZIPFoundation'# 解压zip文件

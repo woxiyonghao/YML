@@ -9,7 +9,7 @@ import UIKit
 import Moya
 import SwiftyJSON
 import AVFoundation
-import SwiftVideoBackground
+//import SwiftVideoBackground
 import Photos
 import AVFoundation
 
