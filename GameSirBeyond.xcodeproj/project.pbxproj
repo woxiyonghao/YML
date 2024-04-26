@@ -270,6 +270,7 @@
 		8EBADDDC2BC68021004823F8 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBADDAC2BC68021004823F8 /* TZGifPhotoPreviewController.m */; };
 		8EBADDDD2BC68021004823F8 /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBADDAD2BC68021004823F8 /* TZImageRequestOperation.m */; };
 		8EBF19CB2BCF9F9D0036770D /* GSSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF19CA2BCF9F9D0036770D /* GSSetViewController.swift */; };
+		8ED2A3222BDB7DFB00340BCC /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2A3212BDB7DFB00340BCC /* ExportOptions.plist */; };
 		8ED6EE7D2BB518EC0033F76D /* TectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE612BB518EC0033F76D /* TectView.swift */; };
 		8ED6EE7E2BB518EC0033F76D /* GameLoginWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */; };
 		8ED6EE7F2BB518EC0033F76D /* GameIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE652BB518EC0033F76D /* GameIntroduceView.swift */; };
@@ -662,6 +663,7 @@
 		8EBADDAD2BC68021004823F8 /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
 		8EBADDAE2BC68021004823F8 /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
 		8EBF19CA2BCF9F9D0036770D /* GSSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSetViewController.swift; sourceTree = "<group>"; };
+		8ED2A3212BDB7DFB00340BCC /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		8ED6EE612BB518EC0033F76D /* TectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TectView.swift; sourceTree = "<group>"; };
 		8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoginWelcomeView.swift; sourceTree = "<group>"; };
 		8ED6EE642BB518EC0033F76D /* GameLoginWelcome-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameLoginWelcome-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1822,6 +1824,7 @@
 		ED9E192B2B901B46004C9E8E = {
 			isa = PBXGroup;
 			children = (
+				8ED2A3212BDB7DFB00340BCC /* ExportOptions.plist */,
 				ED9E19362B901B46004C9E8E /* GameSirBeyond */,
 				ED9E194D2B901B47004C9E8E /* GameSirBeyondTests */,
 				ED9E19572B901B47004C9E8E /* GameSirBeyondUITests */,
@@ -2015,6 +2018,7 @@
 				28D7C9552B9999A20026F136 /* FirmwareListView.xib in Resources */,
 				28D7C98B2B9999A20026F136 /* MenuView.xib in Resources */,
 				28D7C9892B9999A20026F136 /* TabTableViewCell.xib in Resources */,
+				8ED2A3222BDB7DFB00340BCC /* ExportOptions.plist in Resources */,
 				28D7C9802B9999A20026F136 /* SearchFriendViewCell.xib in Resources */,
 				28D7C94B2B9999A20026F136 /* RecordingDetailView.xib in Resources */,
 				28D7C9562B9999A20026F136 /* ForceUpdateFirmwareView.xib in Resources */,
