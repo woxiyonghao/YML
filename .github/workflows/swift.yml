@@ -68,7 +68,7 @@ jobs:
 
       - name: Archive App
         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            scheme: ${{ 'default' }}
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
