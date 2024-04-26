@@ -66,6 +66,9 @@ jobs:
           #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           #xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
 
+      - name: Authorize GitHub Actions to access keychain
+        run: sudo security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.KEYCHAIN_PASSWORD }} ${{ runner.tempDirectory }}/login.keychain-db
+        
       - name: Archive App
         env:
            #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
