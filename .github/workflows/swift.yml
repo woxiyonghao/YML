@@ -63,4 +63,16 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+
+      - name: Export IPA
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          scheme: ${{ 'default' }}
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild -exportArchive -archivePath build/scheme.xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist
+        
+          
      
