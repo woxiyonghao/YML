@@ -21,49 +21,61 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
-
-      - name: Check if Gemfile exists
-        id: gemfile
-        run: |
-          if [ -f Gemfile ]; then
-            echo "Gemfile exists"
-            echo "::set-output name=need_gem_install::true"
-          else
-            echo "Gemfile does not exist"
-            echo "::set-output name=need_gem_install::false"
-          fi
+          
+      # 检查是否已安装gem
+      #- name: Check if Gemfile exists
+        #id: gemfile
+        #run: |
+          #if [ -f Gemfile ]; then
+            #echo "Gemfile exists"
+            #echo "::set-output name=need_gem_install::true"
+          #else
+            #echo "Gemfile does not exist"
+            #echo "::set-output name=need_gem_install::false"
+          #fi
       
-      - name: Install Ruby if needed
-        if: steps.gemfile.outputs.need_gem_install == 'true'
-        run: |
-          sudo apt-get install -y ruby-full
-
-      - name: Check if Podfile exists
-        id: podfile
-        run: |
-          if [ -f Podfile ]; then
-            echo "Podfile exists"
-            echo "::set-output name=need_pod_install::true"
-          else
-            echo "Podfile does not exist"
-            echo "::set-output name=need_pod_install::false"
-          fi
-      
-      - name: Install CocoaPods if needed
-        if: steps.podfile.outputs.need_pod_install == 'true'
-        run: |
-          sudo gem install cocoapods
-          pod update
+      #- name: Install Ruby if needed
+        #if: steps.gemfile.outputs.need_gem_install == 'true'
+        #run: |
+          #sudo apt-get install -y ruby-full
+          
+      # 检查Podfile
+      #- name: Check if Podfile exists
+        #id: podfile
+        #run: |
+          #if [ -f Podfile ]; then
+            #echo "Podfile exists"
+            #echo "::set-output name=need_pod_install::true"
+          #else
+            #echo "Podfile does not exist"
+            #echo "::set-output name=need_pod_install::false"
+          #fi
+      # 是否安装cocoapod，pod 更新整体。(需运行一次update)
+      #- name: Install CocoaPods if needed
+        #if: steps.podfile.outputs.need_pod_install == 'true'
+        #run: |
+          #sudo gem install cocoapods
+          #pod update
      
-      - name: Build
+      #- name: Build
+        #env:
+          #scheme: ${{ 'default' }}
+        #run: |
+          #if [ $scheme = default ]; then scheme=$(cat default); fi
+          #if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          #xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+
+      - name: Archive App
         env:
-          scheme: ${{ 'default' }}
+           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           scheme: ${{ 'default' }}
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
-
+          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+          
       - name: Export IPA
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -72,7 +84,7 @@ jobs:
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild -exportArchive -archivePath build/scheme.xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist
-        
+          cd "$scheme"
+          xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist
           
      
