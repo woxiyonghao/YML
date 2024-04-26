@@ -270,6 +270,30 @@
 		8EBADDDC2BC68021004823F8 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBADDAC2BC68021004823F8 /* TZGifPhotoPreviewController.m */; };
 		8EBADDDD2BC68021004823F8 /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBADDAD2BC68021004823F8 /* TZImageRequestOperation.m */; };
 		8EBF19CB2BCF9F9D0036770D /* GSSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF19CA2BCF9F9D0036770D /* GSSetViewController.swift */; };
+		8ED2A2FF2BDB4A3A00340BCC /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2CC2BDB4A3A00340BCC /* YYTextView.m */; };
+		8ED2A3002BDB4A3A00340BCC /* YYTextMagnifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D02BDB4A3A00340BCC /* YYTextMagnifier.m */; };
+		8ED2A3012BDB4A3A00340BCC /* YYTextContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D32BDB4A3A00340BCC /* YYTextContainerView.m */; };
+		8ED2A3022BDB4A3A00340BCC /* YYTextEffectWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D42BDB4A3A00340BCC /* YYTextEffectWindow.m */; };
+		8ED2A3032BDB4A3A00340BCC /* YYTextInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D62BDB4A3A00340BCC /* YYTextInput.m */; };
+		8ED2A3042BDB4A3A00340BCC /* YYTextLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D72BDB4A3A00340BCC /* YYTextLayout.m */; };
+		8ED2A3052BDB4A3A00340BCC /* YYTextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2D92BDB4A3A00340BCC /* YYTextLine.m */; };
+		8ED2A3062BDB4A3A00340BCC /* YYTextSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2DA2BDB4A3A00340BCC /* YYTextSelectionView.m */; };
+		8ED2A3072BDB4A3A00340BCC /* YYTextKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2DD2BDB4A3A00340BCC /* YYTextKeyboardManager.m */; };
+		8ED2A3082BDB4A3A00340BCC /* YYTextDebugOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2DF2BDB4A3A00340BCC /* YYTextDebugOption.m */; };
+		8ED2A3092BDB4A3A00340BCC /* YYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2E02BDB4A3A00340BCC /* YYLabel.m */; };
+		8ED2A30A2BDB4A3A00340BCC /* YYTextRunDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2E42BDB4A3A00340BCC /* YYTextRunDelegate.m */; };
+		8ED2A30B2BDB4A3A00340BCC /* YYTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2E52BDB4A3A00340BCC /* YYTextParser.m */; };
+		8ED2A30C2BDB4A3A00340BCC /* YYTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2E92BDB4A3A00340BCC /* YYTextAttribute.m */; };
+		8ED2A30D2BDB4A3A00340BCC /* YYTextArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2EB2BDB4A3A00340BCC /* YYTextArchiver.m */; };
+		8ED2A30E2BDB4A3A00340BCC /* YYTextRubyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2EC2BDB4A3A00340BCC /* YYTextRubyAnnotation.m */; };
+		8ED2A30F2BDB4A3A00340BCC /* YYTextUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2EF2BDB4A3A00340BCC /* YYTextUtilities.m */; };
+		8ED2A3102BDB4A3A00340BCC /* NSParagraphStyle+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F02BDB4A3A00340BCC /* NSParagraphStyle+YYText.m */; };
+		8ED2A3112BDB4A3A00340BCC /* NSAttributedString+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F12BDB4A3A00340BCC /* NSAttributedString+YYText.m */; };
+		8ED2A3122BDB4A3A00340BCC /* UIPasteboard+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F42BDB4A3A00340BCC /* UIPasteboard+YYText.m */; };
+		8ED2A3132BDB4A3A00340BCC /* YYTextTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F82BDB4A3A00340BCC /* YYTextTransaction.m */; };
+		8ED2A3142BDB4A3A00340BCC /* UIView+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2F92BDB4A3A00340BCC /* UIView+YYText.m */; };
+		8ED2A3152BDB4A3A00340BCC /* YYTextAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2FC2BDB4A3A00340BCC /* YYTextAsyncLayer.m */; };
+		8ED2A3162BDB4A3A00340BCC /* YYTextWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2A2FD2BDB4A3A00340BCC /* YYTextWeakProxy.m */; };
 		8ED6EE7D2BB518EC0033F76D /* TectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE612BB518EC0033F76D /* TectView.swift */; };
 		8ED6EE7E2BB518EC0033F76D /* GameLoginWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */; };
 		8ED6EE7F2BB518EC0033F76D /* GameIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6EE652BB518EC0033F76D /* GameIntroduceView.swift */; };
@@ -304,7 +328,7 @@
 		8EF062E92BCCC002005D35C0 /* GSJoyconDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF062E82BCCC002005D35C0 /* GSJoyconDetailViewController.swift */; };
 		8EF062EC2BCCCA7E005D35C0 /* KeyMappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF062EB2BCCCA7E005D35C0 /* KeyMappingViewController.swift */; };
 		8EF062EF2BCD1C32005D35C0 /* GSAnyScreenGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF062EE2BCD1C32005D35C0 /* GSAnyScreenGameViewController.swift */; };
-		CF4E080DDA98E5CE2B729528 /* Pods_GameSirBeyond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B4EE68650291ED1313BDD /* Pods_GameSirBeyond.framework */; };
+		A60D1481318BBEBCCCF171AA /* Pods_GameSirBeyond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3F5B252A7FC3B377A8BA75 /* Pods_GameSirBeyond.framework */; };
 		ED9E193F2B901B46004C9E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9E193D2B901B46004C9E8E /* Main.storyboard */; };
 		ED9E19412B901B47004C9E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9E19402B901B47004C9E8E /* Assets.xcassets */; };
 		ED9E19442B901B47004C9E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9E19422B901B47004C9E8E /* LaunchScreen.storyboard */; };
@@ -331,6 +355,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B3F5B252A7FC3B377A8BA75 /* Pods_GameSirBeyond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameSirBeyond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BEDAA12BCE7ABF00D8D4B6 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		28BEDAA32BCE7C7500D8D4B6 /* HomeHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		28BEDAA92BD7BA2000D8D4B6 /* SimpleListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListModel.swift; sourceTree = "<group>"; };
@@ -662,6 +687,55 @@
 		8EBADDAD2BC68021004823F8 /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
 		8EBADDAE2BC68021004823F8 /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
 		8EBF19CA2BCF9F9D0036770D /* GSSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSetViewController.swift; sourceTree = "<group>"; };
+		8ED2A2CB2BDB4A3A00340BCC /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
+		8ED2A2CC2BDB4A3A00340BCC /* YYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextView.m; sourceTree = "<group>"; };
+		8ED2A2CE2BDB4A3A00340BCC /* YYTextSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextSelectionView.h; sourceTree = "<group>"; };
+		8ED2A2CF2BDB4A3A00340BCC /* YYTextLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextLine.h; sourceTree = "<group>"; };
+		8ED2A2D02BDB4A3A00340BCC /* YYTextMagnifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextMagnifier.m; sourceTree = "<group>"; };
+		8ED2A2D12BDB4A3A00340BCC /* YYTextLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextLayout.h; sourceTree = "<group>"; };
+		8ED2A2D22BDB4A3A00340BCC /* YYTextKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextKeyboardManager.h; sourceTree = "<group>"; };
+		8ED2A2D32BDB4A3A00340BCC /* YYTextContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextContainerView.m; sourceTree = "<group>"; };
+		8ED2A2D42BDB4A3A00340BCC /* YYTextEffectWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextEffectWindow.m; sourceTree = "<group>"; };
+		8ED2A2D52BDB4A3A00340BCC /* YYTextDebugOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextDebugOption.h; sourceTree = "<group>"; };
+		8ED2A2D62BDB4A3A00340BCC /* YYTextInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextInput.m; sourceTree = "<group>"; };
+		8ED2A2D72BDB4A3A00340BCC /* YYTextLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextLayout.m; sourceTree = "<group>"; };
+		8ED2A2D82BDB4A3A00340BCC /* YYTextMagnifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextMagnifier.h; sourceTree = "<group>"; };
+		8ED2A2D92BDB4A3A00340BCC /* YYTextLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextLine.m; sourceTree = "<group>"; };
+		8ED2A2DA2BDB4A3A00340BCC /* YYTextSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextSelectionView.m; sourceTree = "<group>"; };
+		8ED2A2DB2BDB4A3A00340BCC /* YYTextEffectWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextEffectWindow.h; sourceTree = "<group>"; };
+		8ED2A2DC2BDB4A3A00340BCC /* YYTextContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextContainerView.h; sourceTree = "<group>"; };
+		8ED2A2DD2BDB4A3A00340BCC /* YYTextKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextKeyboardManager.m; sourceTree = "<group>"; };
+		8ED2A2DE2BDB4A3A00340BCC /* YYTextInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextInput.h; sourceTree = "<group>"; };
+		8ED2A2DF2BDB4A3A00340BCC /* YYTextDebugOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextDebugOption.m; sourceTree = "<group>"; };
+		8ED2A2E02BDB4A3A00340BCC /* YYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLabel.m; sourceTree = "<group>"; };
+		8ED2A2E12BDB4A3A00340BCC /* YYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextView.h; sourceTree = "<group>"; };
+		8ED2A2E32BDB4A3A00340BCC /* YYTextAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextAttribute.h; sourceTree = "<group>"; };
+		8ED2A2E42BDB4A3A00340BCC /* YYTextRunDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextRunDelegate.m; sourceTree = "<group>"; };
+		8ED2A2E52BDB4A3A00340BCC /* YYTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextParser.m; sourceTree = "<group>"; };
+		8ED2A2E62BDB4A3A00340BCC /* YYTextRubyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextRubyAnnotation.h; sourceTree = "<group>"; };
+		8ED2A2E72BDB4A3A00340BCC /* YYTextArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextArchiver.h; sourceTree = "<group>"; };
+		8ED2A2E82BDB4A3A00340BCC /* YYTextRunDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextRunDelegate.h; sourceTree = "<group>"; };
+		8ED2A2E92BDB4A3A00340BCC /* YYTextAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAttribute.m; sourceTree = "<group>"; };
+		8ED2A2EA2BDB4A3A00340BCC /* YYTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextParser.h; sourceTree = "<group>"; };
+		8ED2A2EB2BDB4A3A00340BCC /* YYTextArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextArchiver.m; sourceTree = "<group>"; };
+		8ED2A2EC2BDB4A3A00340BCC /* YYTextRubyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextRubyAnnotation.m; sourceTree = "<group>"; };
+		8ED2A2ED2BDB4A3A00340BCC /* YYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLabel.h; sourceTree = "<group>"; };
+		8ED2A2EF2BDB4A3A00340BCC /* YYTextUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextUtilities.m; sourceTree = "<group>"; };
+		8ED2A2F02BDB4A3A00340BCC /* NSParagraphStyle+YYText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+YYText.m"; sourceTree = "<group>"; };
+		8ED2A2F12BDB4A3A00340BCC /* NSAttributedString+YYText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+YYText.m"; sourceTree = "<group>"; };
+		8ED2A2F22BDB4A3A00340BCC /* UIView+YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYText.h"; sourceTree = "<group>"; };
+		8ED2A2F32BDB4A3A00340BCC /* YYTextTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextTransaction.h; sourceTree = "<group>"; };
+		8ED2A2F42BDB4A3A00340BCC /* UIPasteboard+YYText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPasteboard+YYText.m"; sourceTree = "<group>"; };
+		8ED2A2F52BDB4A3A00340BCC /* YYTextWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextWeakProxy.h; sourceTree = "<group>"; };
+		8ED2A2F62BDB4A3A00340BCC /* YYTextAsyncLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextAsyncLayer.h; sourceTree = "<group>"; };
+		8ED2A2F72BDB4A3A00340BCC /* YYTextUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextUtilities.h; sourceTree = "<group>"; };
+		8ED2A2F82BDB4A3A00340BCC /* YYTextTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextTransaction.m; sourceTree = "<group>"; };
+		8ED2A2F92BDB4A3A00340BCC /* UIView+YYText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYText.m"; sourceTree = "<group>"; };
+		8ED2A2FA2BDB4A3A00340BCC /* NSAttributedString+YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+YYText.h"; sourceTree = "<group>"; };
+		8ED2A2FB2BDB4A3A00340BCC /* NSParagraphStyle+YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+YYText.h"; sourceTree = "<group>"; };
+		8ED2A2FC2BDB4A3A00340BCC /* YYTextAsyncLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAsyncLayer.m; sourceTree = "<group>"; };
+		8ED2A2FD2BDB4A3A00340BCC /* YYTextWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextWeakProxy.m; sourceTree = "<group>"; };
+		8ED2A2FE2BDB4A3A00340BCC /* UIPasteboard+YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+YYText.h"; sourceTree = "<group>"; };
 		8ED6EE612BB518EC0033F76D /* TectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TectView.swift; sourceTree = "<group>"; };
 		8ED6EE632BB518EC0033F76D /* GameLoginWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoginWelcomeView.swift; sourceTree = "<group>"; };
 		8ED6EE642BB518EC0033F76D /* GameLoginWelcome-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameLoginWelcome-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -699,7 +773,6 @@
 		8EF062EB2BCCCA7E005D35C0 /* KeyMappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMappingViewController.swift; sourceTree = "<group>"; };
 		8EF062EE2BCD1C32005D35C0 /* GSAnyScreenGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSAnyScreenGameViewController.swift; sourceTree = "<group>"; };
 		8F61F96BF64F392A8899465A /* Pods-GameSirBeyond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameSirBeyond.debug.xcconfig"; path = "Target Support Files/Pods-GameSirBeyond/Pods-GameSirBeyond.debug.xcconfig"; sourceTree = "<group>"; };
-		E52B4EE68650291ED1313BDD /* Pods_GameSirBeyond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameSirBeyond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9E19342B901B46004C9E8E /* GameSirBeyond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSirBeyond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9E193E2B901B46004C9E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED9E19402B901B47004C9E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -718,8 +791,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D7C8BE2B9999180026F136 /* libyuv.a in Frameworks */,
-				CF4E080DDA98E5CE2B729528 /* Pods_GameSirBeyond.framework in Frameworks */,
 				28D7C8812B9999180026F136 /* GCMOTAUManager.framework in Frameworks */,
+				A60D1481318BBEBCCCF171AA /* Pods_GameSirBeyond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,6 +1043,7 @@
 		28D7C8072B9999180026F136 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				8ED2A2CA2BDB4A3A00340BCC /* YYText */,
 				8E3B484F2BC7E01200466F48 /* YCPopover */,
 				8E3B482E2BC7B79B00466F48 /* JXPhotoBrowser */,
 				28D7C8082B9999180026F136 /* OC */,
@@ -1481,7 +1555,7 @@
 		4B04000020D20FB893C60B1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E52B4EE68650291ED1313BDD /* Pods_GameSirBeyond.framework */,
+				1B3F5B252A7FC3B377A8BA75 /* Pods_GameSirBeyond.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1717,6 +1791,86 @@
 			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
+		8ED2A2CA2BDB4A3A00340BCC /* YYText */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A2CB2BDB4A3A00340BCC /* YYText.h */,
+				8ED2A2CC2BDB4A3A00340BCC /* YYTextView.m */,
+				8ED2A2CD2BDB4A3A00340BCC /* Component */,
+				8ED2A2E02BDB4A3A00340BCC /* YYLabel.m */,
+				8ED2A2E12BDB4A3A00340BCC /* YYTextView.h */,
+				8ED2A2E22BDB4A3A00340BCC /* String */,
+				8ED2A2ED2BDB4A3A00340BCC /* YYLabel.h */,
+				8ED2A2EE2BDB4A3A00340BCC /* Utility */,
+			);
+			path = YYText;
+			sourceTree = "<group>";
+		};
+		8ED2A2CD2BDB4A3A00340BCC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A2CE2BDB4A3A00340BCC /* YYTextSelectionView.h */,
+				8ED2A2CF2BDB4A3A00340BCC /* YYTextLine.h */,
+				8ED2A2D02BDB4A3A00340BCC /* YYTextMagnifier.m */,
+				8ED2A2D12BDB4A3A00340BCC /* YYTextLayout.h */,
+				8ED2A2D22BDB4A3A00340BCC /* YYTextKeyboardManager.h */,
+				8ED2A2D32BDB4A3A00340BCC /* YYTextContainerView.m */,
+				8ED2A2D42BDB4A3A00340BCC /* YYTextEffectWindow.m */,
+				8ED2A2D52BDB4A3A00340BCC /* YYTextDebugOption.h */,
+				8ED2A2D62BDB4A3A00340BCC /* YYTextInput.m */,
+				8ED2A2D72BDB4A3A00340BCC /* YYTextLayout.m */,
+				8ED2A2D82BDB4A3A00340BCC /* YYTextMagnifier.h */,
+				8ED2A2D92BDB4A3A00340BCC /* YYTextLine.m */,
+				8ED2A2DA2BDB4A3A00340BCC /* YYTextSelectionView.m */,
+				8ED2A2DB2BDB4A3A00340BCC /* YYTextEffectWindow.h */,
+				8ED2A2DC2BDB4A3A00340BCC /* YYTextContainerView.h */,
+				8ED2A2DD2BDB4A3A00340BCC /* YYTextKeyboardManager.m */,
+				8ED2A2DE2BDB4A3A00340BCC /* YYTextInput.h */,
+				8ED2A2DF2BDB4A3A00340BCC /* YYTextDebugOption.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		8ED2A2E22BDB4A3A00340BCC /* String */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A2E32BDB4A3A00340BCC /* YYTextAttribute.h */,
+				8ED2A2E42BDB4A3A00340BCC /* YYTextRunDelegate.m */,
+				8ED2A2E52BDB4A3A00340BCC /* YYTextParser.m */,
+				8ED2A2E62BDB4A3A00340BCC /* YYTextRubyAnnotation.h */,
+				8ED2A2E72BDB4A3A00340BCC /* YYTextArchiver.h */,
+				8ED2A2E82BDB4A3A00340BCC /* YYTextRunDelegate.h */,
+				8ED2A2E92BDB4A3A00340BCC /* YYTextAttribute.m */,
+				8ED2A2EA2BDB4A3A00340BCC /* YYTextParser.h */,
+				8ED2A2EB2BDB4A3A00340BCC /* YYTextArchiver.m */,
+				8ED2A2EC2BDB4A3A00340BCC /* YYTextRubyAnnotation.m */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		8ED2A2EE2BDB4A3A00340BCC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2A2EF2BDB4A3A00340BCC /* YYTextUtilities.m */,
+				8ED2A2F02BDB4A3A00340BCC /* NSParagraphStyle+YYText.m */,
+				8ED2A2F12BDB4A3A00340BCC /* NSAttributedString+YYText.m */,
+				8ED2A2F22BDB4A3A00340BCC /* UIView+YYText.h */,
+				8ED2A2F32BDB4A3A00340BCC /* YYTextTransaction.h */,
+				8ED2A2F42BDB4A3A00340BCC /* UIPasteboard+YYText.m */,
+				8ED2A2F52BDB4A3A00340BCC /* YYTextWeakProxy.h */,
+				8ED2A2F62BDB4A3A00340BCC /* YYTextAsyncLayer.h */,
+				8ED2A2F72BDB4A3A00340BCC /* YYTextUtilities.h */,
+				8ED2A2F82BDB4A3A00340BCC /* YYTextTransaction.m */,
+				8ED2A2F92BDB4A3A00340BCC /* UIView+YYText.m */,
+				8ED2A2FA2BDB4A3A00340BCC /* NSAttributedString+YYText.h */,
+				8ED2A2FB2BDB4A3A00340BCC /* NSParagraphStyle+YYText.h */,
+				8ED2A2FC2BDB4A3A00340BCC /* YYTextAsyncLayer.m */,
+				8ED2A2FD2BDB4A3A00340BCC /* YYTextWeakProxy.m */,
+				8ED2A2FE2BDB4A3A00340BCC /* UIPasteboard+YYText.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		8ED6EE5F2BB518EC0033F76D /* GSWelcomeSign */ = {
 			isa = PBXGroup;
 			children = (
@@ -1888,7 +2042,7 @@
 				ED9E19302B901B46004C9E8E /* Sources */,
 				ED9E19312B901B46004C9E8E /* Frameworks */,
 				ED9E19322B901B46004C9E8E /* Resources */,
-				B2B560C6C5C89E38B86AE209 /* [CP] Embed Pods Frameworks */,
+				90644902BB37E4EC487BD9ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2075,7 +2229,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2B560C6C5C89E38B86AE209 /* [CP] Embed Pods Frameworks */ = {
+		90644902BB37E4EC487BD9ED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2106,11 +2260,13 @@
 				28D7C7DC2B98673D0026F136 /* ImageCollectionViewCell.swift in Sources */,
 				8E29E5122BC91A7C00EF93BB /* GSSetterDeallocViewController.swift in Sources */,
 				8E3B48462BC7B79B00466F48 /* JXPhotoBrowserZoomAnimator.swift in Sources */,
+				8ED2A3052BDB4A3A00340BCC /* YYTextLine.m in Sources */,
 				28D7C8802B9999180026F136 /* AppNetworkService.swift in Sources */,
 				28D7C9662B9999A20026F136 /* SettingsContentView.swift in Sources */,
 				28D7C88B2B9999180026F136 /* CLFullScreenController.swift in Sources */,
 				28D7C7DB2B98673D0026F136 /* VideoCollectionViewCell.swift in Sources */,
 				28D7C8822B9999180026F136 /* GSRangeSeekSlider.swift in Sources */,
+				8ED2A3122BDB4A3A00340BCC /* UIPasteboard+YYText.m in Sources */,
 				28D7C9522B9999A20026F136 /* ForceUpdateFirmwareView.swift in Sources */,
 				28D7C7C52B98673D0026F136 /* GamePopView.swift in Sources */,
 				28D7C9672B9999A20026F136 /* SettingsContentClickView.swift in Sources */,
@@ -2124,6 +2280,7 @@
 				8ED6EE912BB518EC0033F76D /* TimerManger.swift in Sources */,
 				8ED6EE7F2BB518EC0033F76D /* GameIntroduceView.swift in Sources */,
 				28D7C95B2B9999A20026F136 /* TriggerAnimatedView.swift in Sources */,
+				8ED2A2FF2BDB4A3A00340BCC /* YYTextView.m in Sources */,
 				28D7C98C2B9999A20026F136 /* MenuView.swift in Sources */,
 				28D7C7D22B98673D0026F136 /* GameDetailView.swift in Sources */,
 				28D7C93D2B9999A20026F136 /* FullPhotoView.swift in Sources */,
@@ -2136,6 +2293,7 @@
 				28D7C8AF2B9999180026F136 /* IQKeyboardManager+Toolbar.swift in Sources */,
 				28D7C98D2B9999A20026F136 /* MenuTopTableViewCell.swift in Sources */,
 				8ED6EE8B2BB518EC0033F76D /* GameInputEmojiView.swift in Sources */,
+				8ED2A30C2BDB4A3A00340BCC /* YYTextAttribute.m in Sources */,
 				28D7C88A2B9999180026F136 /* CLFullScreenRightController.swift in Sources */,
 				28D7C89E2B9999180026F136 /* GSDataTool.m in Sources */,
 				28D7C8AD2B9999180026F136 /* IQKeyboardManager+Debug.swift in Sources */,
@@ -2164,34 +2322,42 @@
 				28F3D91C2BA7DADA008CAE39 /* AppDelegate.swift in Sources */,
 				28D7C9392B9999A20026F136 /* CapturesView.swift in Sources */,
 				28F3D7172BA7CD32008CAE39 /* GSHorizontalFlowLayout.swift in Sources */,
+				8ED2A3092BDB4A3A00340BCC /* YYLabel.m in Sources */,
 				28D7C9612B9999A20026F136 /* KeySettingView.swift in Sources */,
 				8E3B48442BC7B79B00466F48 /* JXPhotoBrowserCell.swift in Sources */,
 				8EF062E92BCCC002005D35C0 /* GSJoyconDetailViewController.swift in Sources */,
 				8EBADDD92BC68021004823F8 /* TZAuthLimitedFooterTipView.m in Sources */,
 				28D7C9592B9999A20026F136 /* FirmwareTableViewCell.swift in Sources */,
+				8ED2A3062BDB4A3A00340BCC /* YYTextSelectionView.m in Sources */,
 				28D7C96D2B9999A20026F136 /* EditUserInformationView.swift in Sources */,
 				28D7C8892B9999180026F136 /* CLAnimationTransitioning.swift in Sources */,
 				8ED6EE922BB518EC0033F76D /* GSWelcomeSignViewController.swift in Sources */,
 				8EBF19CB2BCF9F9D0036770D /* GSSetViewController.swift in Sources */,
 				28D7C8832B9999180026F136 /* GSRangeSeekSliderDelegate.swift in Sources */,
 				28D7C8A02B9999180026F136 /* IQKeyboardManager+Internal.swift in Sources */,
+				8ED2A30F2BDB4A3A00340BCC /* YYTextUtilities.m in Sources */,
 				8E22DBFA2BCE496B00F0DEA9 /* GSTectKeyViewController.swift in Sources */,
 				28D7C8CA2B9999180026F136 /* AnimatedButton.swift in Sources */,
 				8E3B48432BC7B79B00466F48 /* JXPhotoBrowserAnimatedTransitioning.swift in Sources */,
 				8ED6EE812BB518EC0033F76D /* GameLibAuthView.swift in Sources */,
 				28D7C8922B9999180026F136 /* CLPlayerContentViewDelegate.swift in Sources */,
 				8E4BC48C2BCE0A1D00D740D0 /* GSQuickAccessViewController.swift in Sources */,
+				8ED2A3022BDB4A3A00340BCC /* YYTextEffectWindow.m in Sources */,
 				8ED6EEA22BB51C6D0033F76D /* GameEditUserInfoView.swift in Sources */,
 				28D7C8B22B9999180026F136 /* IQUITextFieldView+Additions.swift in Sources */,
 				28D7C93B2B9999A20026F136 /* ScreenshotCollectionViewCell.swift in Sources */,
+				8ED2A3162BDB4A3A00340BCC /* YYTextWeakProxy.m in Sources */,
 				28D7C7C22B98673D0026F136 /* SimpleWebView.swift in Sources */,
+				8ED2A3002BDB4A3A00340BCC /* YYTextMagnifier.m in Sources */,
 				8ED6EE802BB518EC0033F76D /* GameMsgCodeView.swift in Sources */,
 				28D7C8A62B9999180026F136 /* IQInvocation.swift in Sources */,
 				28D7C8932B9999180026F136 /* CLRotateAnimationView.swift in Sources */,
+				8ED2A3012BDB4A3A00340BCC /* YYTextContainerView.m in Sources */,
 				28D7C8C22B9999180026F136 /* NTESSocket.m in Sources */,
 				28D7C7C82B98673D0026F136 /* SwitchMFiAlertView.swift in Sources */,
 				28D7C9882B9999A20026F136 /* TabTableView.swift in Sources */,
 				8E3B483F2BC7B79B00466F48 /* JXPhotoBrowserNoneAnimator.swift in Sources */,
+				8ED2A3142BDB4A3A00340BCC /* UIView+YYText.m in Sources */,
 				8EBADD822BC6361A004823F8 /* GSSetterMenuCell.swift in Sources */,
 				8EBADDD62BC68021004823F8 /* TZPhotoPickerController.m in Sources */,
 				28D7C94D2B9999A20026F136 /* RecordingCollectionViewCell.swift in Sources */,
@@ -2200,14 +2366,17 @@
 				8E0EE5662BC26D1600A3595D /* UIColor+Hex.m in Sources */,
 				8EBADDDA2BC68021004823F8 /* TZImagePickerController.m in Sources */,
 				28D7C9572B9999A20026F136 /* FirmwareListView.swift in Sources */,
+				8ED2A30E2BDB4A3A00340BCC /* YYTextRubyAnnotation.m in Sources */,
 				8EBADDD02BC68021004823F8 /* TZAssetModel.m in Sources */,
 				28D7C9532B9999A20026F136 /* UpdateFirmwareView.swift in Sources */,
 				28D7C8982B9999180026F136 /* GSGameController.m in Sources */,
+				8ED2A3102BDB4A3A00340BCC /* NSParagraphStyle+YYText.m in Sources */,
 				8E3B483E2BC7B79B00466F48 /* JXPhotoBrowserPageIndicator.swift in Sources */,
 				28D7C8A92B9999180026F136 /* IQKeyboardManagerConstants.swift in Sources */,
 				8EF062EC2BCCCA7E005D35C0 /* KeyMappingViewController.swift in Sources */,
 				8E32436E2BBA81AE00D353D2 /* GSBuyViewController.swift in Sources */,
 				8E3B484E2BC7B95900466F48 /* VideoCell.swift in Sources */,
+				8ED2A3132BDB4A3A00340BCC /* YYTextTransaction.m in Sources */,
 				28BEDAB22BD8A9D200D8D4B6 /* HomeCollectionSettingCell.swift in Sources */,
 				8EBADDD22BC68021004823F8 /* TZPhotoPreviewController.m in Sources */,
 				28D7C8C82B9999180026F136 /* AppDefine.swift in Sources */,
@@ -2251,9 +2420,11 @@
 				28D7C8C72B9999180026F136 /* ScreenRecMainVC.swift in Sources */,
 				8ED6EE8C2BB518EC0033F76D /* GameShellFourView.swift in Sources */,
 				8E29E50C2BC8D0BF00EF93BB /* GSSetterEditGameNameViewController.swift in Sources */,
+				8ED2A3072BDB4A3A00340BCC /* YYTextKeyboardManager.m in Sources */,
 				8EBADDCE2BC68021004823F8 /* TZVideoCropController.m in Sources */,
 				28D7C7D42B98673D0026F136 /* VideoCollectionView.swift in Sources */,
 				28D7C95C2B9999A20026F136 /* TestKeyView.swift in Sources */,
+				8ED2A30B2BDB4A3A00340BCC /* YYTextParser.m in Sources */,
 				28BEDAA42BCE7C7600D8D4B6 /* HomeHeaderCollectionViewCell.swift in Sources */,
 				8E4BC48F2BCE0D7700D740D0 /* GSNewGuideViewController.swift in Sources */,
 				8E22DC032BCE5B0500F0DEA9 /* GSRecodeBitRateViewController.swift in Sources */,
@@ -2261,6 +2432,7 @@
 				8E22DC012BCE5AED00F0DEA9 /* GSRecodeFormatViewController.swift in Sources */,
 				28D7C8852B9999180026F136 /* VideoPlayerVC.swift in Sources */,
 				8ED6EE872BB518EC0033F76D /* GameInputNameView.swift in Sources */,
+				8ED2A30D2BDB4A3A00340BCC /* YYTextArchiver.m in Sources */,
 				28D7C8962B9999180026F136 /* ESSaveToAlbum.swift in Sources */,
 				28D7C9962B99C22E0026F136 /* HomeCollectionView.swift in Sources */,
 				28D7C8992B9999180026F136 /* GSGameControllerManager.m in Sources */,
@@ -2271,6 +2443,7 @@
 				28D7C8B42B9999180026F136 /* IQNSArray+Sort.swift in Sources */,
 				8E22DBFF2BCE5AC000F0DEA9 /* GSRecodeFPSViewController.swift in Sources */,
 				28D7C87F2B9999180026F136 /* NSMutableAttributedString+Extension.swift in Sources */,
+				8ED2A3082BDB4A3A00340BCC /* YYTextDebugOption.m in Sources */,
 				8ED6EE8F2BB518EC0033F76D /* GameShellFiveView.swift in Sources */,
 				28D7C8AA2B9999180026F136 /* IQKeyboardManager+Position.swift in Sources */,
 				28D7C94F2B9999A20026F136 /* CaptureManager.swift in Sources */,
@@ -2286,11 +2459,13 @@
 				28D7C9632B9999A20026F136 /* JoystickSettingView.swift in Sources */,
 				8EBADDCC2BC68021004823F8 /* TZAssetCell.m in Sources */,
 				28D7C8B02B9999180026F136 /* IQUIScrollView+Additions.swift in Sources */,
+				8ED2A3112BDB4A3A00340BCC /* NSAttributedString+YYText.m in Sources */,
 				28D7C87C2B9999180026F136 /* UIButton+Extension.swift in Sources */,
 				28D7C8942B9999180026F136 /* CLPlayerContentPanelHeadView.swift in Sources */,
 				28D7C9492B9999A20026F136 /* HighlightPreviewView.swift in Sources */,
 				28D7C7D82B98673D0026F136 /* CategoryCollectionViewCell.swift in Sources */,
 				28D7C7BE2B98673D0026F136 /* GameViewController.swift in Sources */,
+				8ED2A3152BDB4A3A00340BCC /* YYTextAsyncLayer.m in Sources */,
 				28D7C8A72B9999180026F136 /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */,
 				8ED6EE8E2BB518EC0033F76D /* GameLoginView.swift in Sources */,
 				8E3B485F2BC7EAF500466F48 /* GSSetterEditInfoViewController.swift in Sources */,
@@ -2303,6 +2478,7 @@
 				28D7C7B82B98673D0026F136 /* VideoModel.swift in Sources */,
 				8ED6EE852BB518EC0033F76D /* GameNotiAuthView.swift in Sources */,
 				28D7C8CB2B9999180026F136 /* LanguageTool.swift in Sources */,
+				8ED2A3032BDB4A3A00340BCC /* YYTextInput.m in Sources */,
 				28D7C8C92B9999180026F136 /* AppExtension.swift in Sources */,
 				28D7C8972B9999180026F136 /* EADSessionController.m in Sources */,
 				28D7C96F2B9999A20026F136 /* QuitAccountView.swift in Sources */,
@@ -2312,6 +2488,7 @@
 				28D7C7BC2B98673D0026F136 /* SearchGameModel.swift in Sources */,
 				8EBADDCF2BC68021004823F8 /* TZVideoPlayerController.m in Sources */,
 				8ED6EE932BB518EC0033F76D /* GSAuthTool.swift in Sources */,
+				8ED2A3042BDB4A3A00340BCC /* YYTextLayout.m in Sources */,
 				8EBADDCB2BC68021004823F8 /* TZImageCropManager.m in Sources */,
 				8EBADD812BC6361A004823F8 /* GSSetterRightBaseView.swift in Sources */,
 				28D7C88F2B9999180026F136 /* CLPlayerContentView.swift in Sources */,
@@ -2337,6 +2514,7 @@
 				28D7C8B62B9999180026F136 /* RangeSeekSliderDelegate.swift in Sources */,
 				28D7C94E2B9999A20026F136 /* RecordingDetailView.swift in Sources */,
 				28D7C9692B9999A20026F136 /* WeakScriptMessageDelegate.swift in Sources */,
+				8ED2A30A2BDB4A3A00340BCC /* YYTextRunDelegate.m in Sources */,
 				28F3D7162BA7CD32008CAE39 /* GSVerticalFlowLayout.swift in Sources */,
 				28D7C8BD2B9999180026F136 /* NTESYUVConverter.mm in Sources */,
 				28D7C7B92B98673D0026F136 /* GameDetailModel.swift in Sources */,

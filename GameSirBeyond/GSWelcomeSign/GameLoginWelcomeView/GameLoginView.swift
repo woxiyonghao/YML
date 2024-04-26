@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import YYText
+//import YYText
 class GameLoginView: UIView {
     
     open var onFocusIdx = 0

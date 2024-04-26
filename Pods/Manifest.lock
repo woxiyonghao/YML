@@ -1060,7 +1060,6 @@ PODS:
   - SwiftVideoBackground (3.4.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
-  - YYText (1.0.7)
   - ZIPFoundation (0.9.16)
 
 DEPENDENCIES:
@@ -1084,7 +1083,6 @@ DEPENDENCIES:
   - SwiftVideoBackground
   - SwiftyJSON
   - Then
-  - YYText
   - ZIPFoundation
 
 SPEC REPOS:
@@ -1132,7 +1130,6 @@ SPEC REPOS:
     - SwiftVideoBackground
     - SwiftyJSON
     - Then
-    - YYText
     - ZIPFoundation
 
 SPEC CHECKSUMS:
@@ -1179,9 +1176,8 @@ SPEC CHECKSUMS:
   SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZIPFoundation: d170fa8e270b2a32bef9dcdcabff5b8f1a5deced
 
-PODFILE CHECKSUM: e98002123b1843fcdd166d81d2979d4247152ee6
+PODFILE CHECKSUM: a2891fc494220959eea65036e683d5128fbb00ad
 
 COCOAPODS: 1.15.2

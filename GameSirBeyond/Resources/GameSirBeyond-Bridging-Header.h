@@ -29,6 +29,7 @@
 #import "UIImageView+WebCache.h"
 #endif
 
+#import "YYText.h"
 
 #import "MBProgressHUD+Util.h"
 #import "SAMKeychain.h"// 钥匙串管理
