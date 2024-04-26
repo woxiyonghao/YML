@@ -53,7 +53,7 @@ jobs:
         if: steps.podfile.outputs.need_pod_install == 'true'
         run: |
           sudo gem install cocoapods
-          pod install
+          pod update
      
       - name: Build
         env:
