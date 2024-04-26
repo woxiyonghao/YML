@@ -8,7 +8,7 @@
 import UIKit
 import Moya
 import SwiftyJSON
-//import SwiftVideoBackground
+import SwiftVideoBackground
 
 class GameInfoView: UIView {
     

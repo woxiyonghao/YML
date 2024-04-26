@@ -269,6 +269,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftGifOrigin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftVideoBackground.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -280,6 +290,11 @@
 			<false/>
 		</dict>
 		<key>Then.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYText.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

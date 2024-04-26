@@ -9,7 +9,7 @@ import Foundation
 import QuartzCore
 import UIKit
 import CommonCrypto
-//import SwiftGifOrigin
+import SwiftGifOrigin
 
 // MARK: 实现xib设置边框颜色。注意：在xib中，设置边框颜色的Key Path是layer.borderUIColor，而不是layer.borderColor
 @IBDesignable extension CALayer {

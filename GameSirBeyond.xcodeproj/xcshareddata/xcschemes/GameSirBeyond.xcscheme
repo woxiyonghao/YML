@@ -63,7 +63,8 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ED9E19332B901B46004C9E8E"
@@ -71,7 +72,7 @@
             BlueprintName = "GameSirBeyond"
             ReferencedContainer = "container:GameSirBeyond.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"

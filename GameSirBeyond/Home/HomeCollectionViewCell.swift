@@ -11,7 +11,7 @@ import UIKit
 // "模拟器"
 #else
 // "真机"
-//import SwiftVideoBackground
+import SwiftVideoBackground
 #endif
 
 class HomeCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {

@@ -1187,8 +1187,11 @@ PODS:
     - SDWebImage/Core (= 5.19.1)
   - SDWebImage/Core (5.19.1)
   - SnapKit (5.7.1)
+  - SwiftGifOrigin (1.7.0)
+  - SwiftVideoBackground (3.4.0)
   - SwiftyJSON (5.0.2)
   - Then (3.0.0)
+  - YYText (1.0.7)
   - ZIPFoundation (0.9.19)
 
 DEPENDENCIES:
@@ -1208,8 +1211,11 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SnapKit
+  - SwiftGifOrigin
+  - SwiftVideoBackground
   - SwiftyJSON
   - Then
+  - YYText
   - ZIPFoundation
 
 SPEC REPOS:
@@ -1253,8 +1259,11 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SnapKit
+    - SwiftGifOrigin
+    - SwiftVideoBackground
     - SwiftyJSON
     - Then
+    - YYText
     - ZIPFoundation
 
 SPEC CHECKSUMS:
@@ -1297,10 +1306,13 @@ SPEC CHECKSUMS:
   RxSwift: 6ee35684dc3f7a63938758f4b7708199517dfa97
   SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZIPFoundation: b8c29ea7ae353b309bc810586181fd073cb3312c
 
-PODFILE CHECKSUM: c8406ff0715474245f5b37f6890c07b05a3648ac
+PODFILE CHECKSUM: 68ba2b31949844ef673af354413ce316df89c90f
 
 COCOAPODS: 1.15.2

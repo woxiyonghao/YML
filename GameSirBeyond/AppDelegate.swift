@@ -12,7 +12,7 @@ import GameController
 import ReplayKit
 import Photos
 import UserNotifications
-//import SwiftVideoBackground
+import SwiftVideoBackground
 import Alamofire
 import ZIPFoundation
 import FirebaseCore

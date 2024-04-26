@@ -66,10 +66,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     let guide = getUserGuide() == "1"
                     let username = getUsername().isBlank == false
                     var ifNeedNoti = UserDefaultWrapper<Int?>(key: UserDefaultKeys.ifNeedNoti)
-                    let noti = ifNeedNoti.wrappedValue != 0
+                    let noti = ifNeedNoti.wrappedValue != 0 && ifNeedNoti.wrappedValue != nil
                     
                     var ifNeedLibrary = UserDefaultWrapper<Int?>(key: UserDefaultKeys.ifNeedLibrary)
-                    let library = ifNeedLibrary.wrappedValue != 0
+                    let library = ifNeedLibrary.wrappedValue != 0  && ifNeedLibrary.wrappedValue != nil
                     
                     if (emoji && phone && keyPrompt && guide && username && noti && library && reslut){
                         self.toHome()
@@ -270,6 +270,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             case .failure(_): do {
                 print("网络错误")
+                x(false, nil)
             }
                 break
             }
