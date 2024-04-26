@@ -22,11 +22,38 @@ jobs:
           echo $default | cat >default
           echo Using default scheme: $default
 
-      - name: Install CocoaPods
-        run: sudo gem install cocoapods
+      - name: Check if Gemfile exists
+        id: gemfile
+        run: |
+          if [ -f Gemfile ]; then
+            echo "Gemfile exists"
+            echo "::set-output name=need_gem_install::true"
+          else
+            echo "Gemfile does not exist"
+            echo "::set-output name=need_gem_install::false"
+          fi
+      
+      - name: Install Ruby if needed
+        if: steps.gemfile.outputs.need_gem_install == 'true'
+        run: |
+          sudo apt-get install -y ruby-full
 
-      - name: Install CocoaPods dependencies
-        run: pod install
+      - name: Check if Podfile exists
+        id: podfile
+        run: |
+          if [ -f Podfile ]; then
+            echo "Podfile exists"
+            echo "::set-output name=need_pod_install::true"
+          else
+            echo "Podfile does not exist"
+            echo "::set-output name=need_pod_install::false"
+          fi
+      
+      - name: Install CocoaPods if needed
+        if: steps.podfile.outputs.need_pod_install == 'true'
+        run: |
+          sudo gem install cocoapods
+          pod install
      
       - name: Build
         env:
