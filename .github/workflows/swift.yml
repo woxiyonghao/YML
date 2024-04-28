@@ -15,12 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-     # - name: Set Default Scheme
-        #run: |
-          #scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          #default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          #echo $default | cat >default
-          #echo Using default scheme: $default
+      - name: Set Default Scheme
+        run: |
+          scheme_list=$(xcodebuild -list -json | tr -d "\n")
+          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          echo $default | cat >default
+          echo Using default scheme: $default
           
       # 检查是否已安装gem
       #- name: Check If Gemfile Exists
@@ -81,18 +81,18 @@ jobs:
           export CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64"
           export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           
-      - name: Archive App
-        env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-           CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
-           PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
-           CERTIFICATE_ADHOC_P12_BASE64: ${{ secrets.CERTIFICATE_ADHOC_P12_BASE64 }}
-           scheme: ${{ 'default' }}
-        run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" 
+      #- name: Archive App
+        #env:
+           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           #CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
+           #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+           #CERTIFICATE_ADHOC_P12_BASE64: ${{ secrets.CERTIFICATE_ADHOC_P12_BASE64 }}
+           #scheme: ${{ 'default' }}
+        #run: |
+          #if [ $scheme = default ]; then scheme=$(cat default); fi
+          #if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" 
 
           
       - name: Export IPA
@@ -115,6 +115,6 @@ jobs:
           ipa_path: ${{ steps.export_ipa.outputs.ipa_path }}
 
         run: |
-           #echo "The IPA file is located at: $ipa_path"
-           #echo "path : ${GITHUB_WORKSPACE}/build/"
-           #ls -l ${GITHUB_WORKSPACE}/build/
+           echo "The IPA file is located at: $ipa_path"
+           echo "path : ${GITHUB_WORKSPACE}/build/"
+           ls -l ${GITHUB_WORKSPACE}/build/
