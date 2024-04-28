@@ -68,7 +68,7 @@ jobs:
 
       - name: Unlock keychain
         run: |
-          security unlock-keychain -p ${{ secrets.KEYCHAIN_PASSWORD }} /Library/Keychains/login.keychain-db CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+          security unlock-keychain -u ${{ secrets.KEYCHAIN_PASSWORD }} /Library/Keychains/login.keychain-db CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           
