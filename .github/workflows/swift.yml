@@ -66,9 +66,11 @@ jobs:
           #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           #xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
 
-      - name: Unlock keychain
+      - name: Unlock keychain and set signing environment variables
         run: |
-          security unlock-keychain -u ${{ secrets.KEYCHAIN_PASSWORD }} /Library/Keychains/login.keychain-db CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" /Library/Keychains/login.keychain-db
+          export CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}"
+          export PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           
