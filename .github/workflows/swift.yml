@@ -117,7 +117,7 @@ jobs:
            echo "The IPA file is located at: ${{ steps.export_ipa.outputs.ipa_path }}"
            echo "The IPA file is located at: build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
            echo "--------------"
-           ls -l build/
+           ls -l ~/Library/Developer/Xcode/DerivedData/build/
 
       - name: Check build result
         if: success()
