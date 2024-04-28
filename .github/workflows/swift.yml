@@ -30,9 +30,9 @@ jobs:
             echo "Gemfile exists"
             echo "::set-output name=need_gem_install::true"
           else
-            #echo "Gemfile does not exist"
-            #echo "::set-output name=need_gem_install::false"
-          #fi
+            echo "Gemfile does not exist"
+            echo "::set-output name=need_gem_install::false"
+          fi
       
       - name: Install Ruby If Needed
         if: steps.gemfile.outputs.need_gem_install == 'true'
@@ -47,8 +47,8 @@ jobs:
             echo "Podfile exists"
             echo "::set-output name=need_pod_install::true"
           else
-            #echo "Podfile does not exist"
-            #echo "::set-output name=need_pod_install::false"
+            echo "Podfile does not exist"
+            echo "::set-output name=need_pod_install::false"
           fi
           
       # 是否安装cocoapod，pod 更新整体。(需运行一次update)
