@@ -13,46 +13,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
 
-     
-      - name: Unlock Keychain And Set Signing Environment Variables
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-          CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
-          PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+      - name: Get IPA Path
         run: |
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" 
-          export CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64"
-          export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
-        
-          
-    
-          
-      - name: Export IPA
-        id: export_ipa
-        env:
-          #KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
-          PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
-          scheme: ${{ 'default' }}
-        run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          #xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
-          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
-          echo "::set-output name=ipa_path::$export_path"
-          echo "::set-output name=export_ipa_msg::`done`"
-
+           echo "------------------------------------------"
+           echo "The IPA file message: ${{ steps.export_ipa.outputs.export_ipa_msg }}"
+           echo "The IPA file is located at: build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
     
           
      
