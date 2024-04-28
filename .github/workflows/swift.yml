@@ -114,15 +114,17 @@ jobs:
           #xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath "${GITHUB_WORKSPACE}/build" -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
           echo "::set-output name=ipa_path::$export_path"
+          echo "export_path : ${{ export_path }}"
 
+          
       - name: Get IPA Path
         run: |
            echo "The IPA file is located at: ${GITHUB_WORKSPACE}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
-          
+           echo "export_path : ${{ steps.export_ipa.output.export_ipa }}"
 
       - name: Check if a file exists at a specific path
         run:  |
-          test -f ${GITHUB_WORKSPACE}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa && echo "File exists" || echo "File does not exist"
+          test -f ${{ GITHUB_WORKSPACE }}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa && echo "File exists" || echo "File does not exist"
   
       - name: Check build result
         if: success()
