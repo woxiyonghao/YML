@@ -32,7 +32,7 @@ jobs:
           else
             #echo "Gemfile does not exist"
             #echo "::set-output name=need_gem_install::false"
-          fi
+          #fi
       
       - name: Install Ruby If Needed
         if: steps.gemfile.outputs.need_gem_install == 'true'
