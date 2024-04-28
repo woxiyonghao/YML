@@ -120,7 +120,7 @@ jobs:
       - name: Get IPA Path
         run: |
            echo "The IPA file is located at: ${GITHUB_WORKSPACE}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
-           echo "export_path : ${{ steps.export_ipa.output.export_ipa }}"
+          
 
       - name: Check if a file exists at a specific path
         run:  |
