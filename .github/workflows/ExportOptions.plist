@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>exportPath</key>
-	<string>$(DERIVED_DATA_PATH)</string>
+	<string>${GITHUB_WORKSPACE}/build</string>
 	<key>compileBitcode</key>
 	<false/>
 	<key>destination</key>
