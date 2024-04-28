@@ -69,10 +69,10 @@ jobs:
         run: |
           echo "BUILD_SUCCESS=true" >> $GITHUB_ENV
 
-      - name: List DerivedData Contents
-        run: |
-            echo "------------------------------------------"
-            ls -l $(DERIVED_DATA_PATH)
-            echo "DerivedData Path: $DERIVED_DATA_PATH"
+      #- name: List DerivedData Contents
+        #run: |
+            #echo "------------------------------------------"
+            #ls -l $(DERIVED_DATA_PATH)
+            #echo "DerivedData Path: $DERIVED_DATA_PATH"
           
      
