@@ -26,7 +26,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-    
+
+      - name: Check If Build Directory Exists
+        run: | 
+          test -d build || mkdir build
       # 检查是否已安装gem
       #- name: Check If Gemfile Exists
         #id: gemfile
