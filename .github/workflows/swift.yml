@@ -111,9 +111,11 @@ jobs:
           #xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
           echo "::set-output name=ipa_path::$export_path"
+          echo "::set-output name=export_ipa_msg::`done`"
 
       - name: Get IPA Path
         run: |
+           echo "The IPA file message: ${{ export_ipa_msg }}"
            echo "The IPA file is located at: ${{ steps.export_ipa.outputs.ipa_path }}"
 
       - name: Check build result
