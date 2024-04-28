@@ -117,10 +117,8 @@ jobs:
 
       - name: Get IPA Path
         run: |
-           echo "-----The IPA file is located at: ${GITHUB_WORKSPACE}/build"
-           echo "The IPA file is located at: build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
-           echo "--------------"
-           ls -l ${GITHUB_WORKSPACE}/build
+           echo "The IPA file is located at: ${GITHUB_WORKSPACE}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa"
+          
 
       - name: Check if a file exists at a specific path
         run:  |
