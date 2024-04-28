@@ -53,20 +53,6 @@ jobs:
           echo "::set-output name=ipa_path::$export_path"
           echo "::set-output name=export_ipa_msg::`done`"
 
-      - name: Get IPA Path
-        run: |
-           echo "------------------------------------------"
-           echo "The IPA file message: ${{ steps.export_ipa.outputs.export_ipa_msg }}"
-           echo "The IPA file is located at: ${{ steps.export_ipa.outputs.ipa_path }}"
-
-      - name: Check build result
-        if: success()
-        run: |
-          echo "BUILD_SUCCESS=true" >> $GITHUB_ENV
-
-      - name: List DerivedData Contents
-        run: |
-            echo "------------------------------------------"
-            ls -l ~/Library/Developer/Xcode/DerivedData
+    
           
      
