@@ -1,4 +1,4 @@
-name: iOS starter workflow
+name: Egg iOS CI
 
 on:
   push:
@@ -8,9 +8,8 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using real device
+    name: Build Archive Export App And Notify Dingtalk
     runs-on: macos-latest
-   
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -108,11 +107,12 @@ jobs:
           echo "::set-output name=ipa_path::$export_path"
 
       - name: Get IPA Path
-        env:
-          ipa_path: ${{ steps.export_ipa.outputs.ipa_path }}
-
         run: |
-           echo "The IPA file is located at: $ipa_path"
-     
+           echo "The IPA file is located at: ${{ steps.export_ipa.outputs.ipa_path }}"
+
+      - name: Check build result
+        if: success()
+        run: |
+          echo "BUILD_SUCCESS=true" >> $GITHUB_ENV
           
      
