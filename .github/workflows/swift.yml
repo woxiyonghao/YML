@@ -125,7 +125,7 @@ jobs:
 
       - name: Check if a file exists at a specific path
         run:  |
-          test -f ${{ GITHUB_WORKSPACE }}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa && echo "File exists" || echo "File does not exist"
+          test -f ${GITHUB_WORKSPACE}/build/${{ github.event.repository.name }}-${{ github.sha }}.ipa && echo "File exists" || echo "File does not exist"
   
       - name: Check build result
         if: success()
