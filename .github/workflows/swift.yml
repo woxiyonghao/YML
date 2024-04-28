@@ -87,17 +87,17 @@ jobs:
           #export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
         
           
-      #- name: Archive App
-        #env:
-           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-           #CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
-           #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
-           #scheme: ${{ 'default' }}
-        #run: |
-          #if [ $scheme = default ]; then scheme=$(cat default); fi
-          #if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
+      - name: Archive App
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
+           PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+           scheme: ${{ 'default' }}
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           
       - name: Export IPA
         id: export_ipa
