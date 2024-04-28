@@ -115,7 +115,7 @@ jobs:
 
       - name: Get IPA Path
         run: |
-           echo "The IPA file message: ${{ export_ipa_msg }}"
+           echo "The IPA file message: ${{ steps.export_ipa.outputs.export_ipa_msg }}"
            echo "The IPA file is located at: ${{ steps.export_ipa.outputs.ipa_path }}"
 
       - name: Check build result
