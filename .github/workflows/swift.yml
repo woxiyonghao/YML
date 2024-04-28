@@ -23,49 +23,49 @@ jobs:
           echo Using default scheme: $default
           
       # 检查是否已安装gem
-      #- name: Check If Gemfile Exists
-        #id: gemfile
-        #run: |
-          #if [ -f Gemfile ]; then
-            #echo "Gemfile exists"
-            #echo "::set-output name=need_gem_install::true"
-          #else
-            #echo "Gemfile does not exist"
-            #echo "::set-output name=need_gem_install::false"
-          #fi
+      - name: Check If Gemfile Exists
+        id: gemfile
+        run: |
+          if [ -f Gemfile ]; then
+            echo "Gemfile exists"
+            echo "::set-output name=need_gem_install::true"
+          else
+            echo "Gemfile does not exist"
+            echo "::set-output name=need_gem_install::false"
+          fi
       
-      #- name: Install Ruby If Needed
-        #if: steps.gemfile.outputs.need_gem_install == 'true'
-        #run: |
-          #sudo apt-get install -y ruby-full
+      - name: Install Ruby If Needed
+        if: steps.gemfile.outputs.need_gem_install == 'true'
+        run: |
+          sudo apt-get install -y ruby-full
           
       # 检查Podfile
-      #- name: Check If Podfile Exists
-        #id: podfile
-        #run: |
-          #if [ -f Podfile ]; then
-            #echo "Podfile exists"
-            #echo "::set-output name=need_pod_install::true"
-          #else
-            #echo "Podfile does not exist"
-            #echo "::set-output name=need_pod_install::false"
-          #fi
+      - name: Check If Podfile Exists
+        id: podfile
+        run: |
+          if [ -f Podfile ]; then
+            echo "Podfile exists"
+            echo "::set-output name=need_pod_install::true"
+          else
+            echo "Podfile does not exist"
+            echo "::set-output name=need_pod_install::false"
+          fi
           
       # 是否安装cocoapod，pod 更新整体。(需运行一次update)
-      #- name: Install CocoaPods If Needed
-        #if: steps.podfile.outputs.need_pod_install == 'true'
-        #run: |
-          #sudo gem install cocoapods
-          #pod update
+      - name: Install CocoaPods If Needed
+        if: steps.podfile.outputs.need_pod_install == 'true'
+        run: |
+          sudo gem install cocoapods
+          pod update
      
-      #- name: Clean Build App
-        #env:
-          #scheme: ${{ 'default' }}
-        #run: |
-          #if [ $scheme = default ]; then scheme=$(cat default); fi
-          #if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          #xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
+      - name: Clean Build App
+        env:
+          scheme: ${{ 'default' }}
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -verbose -allowProvisioningUpdates CODE_SIGN_IDENTITY="${{ secrets.CERTIFICATE_P12_BASE64 }}" PROVISIONING_PROFILE="${{ secrets.PROVISIONING_PROFILE_BASE64 }}"
 
 
         
