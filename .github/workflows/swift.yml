@@ -68,7 +68,8 @@ jobs:
 
       - name: Authorize GitHub Actions to access keychain
         run: |
-          sudo security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.KEYCHAIN_PASSWORD }} ${{ runner.tempDirectory }}/login.keychain-db
+          Run sudo security set-key-partition-list -S apple-tool:,apple: -s -k *** /login.keychain-db
+
         
       - name: Archive App
         env:
