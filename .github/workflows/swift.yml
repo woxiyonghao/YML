@@ -113,4 +113,4 @@ jobs:
         run: |
            echo "The IPA file is located at: $ipa_path"
            echo "path : ${GITHUB_WORKSPACE}/build/"
-           ls -l ${{ GITHUB_WORKSPACE }}/build/
+           ls -l ${GITHUB_WORKSPACE}/build/
