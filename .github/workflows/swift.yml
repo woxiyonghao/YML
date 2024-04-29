@@ -84,6 +84,9 @@ jobs:
           KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
           IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
           PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+          BUNDLE_ID: com.xiaoji.beyond
+          TEAM_ID: 2V8DDU6RFC
+
         run: |
           #security unlock-keychain -p "$KEYCHAIN_PASSWORD" 
           #export CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64"
@@ -92,6 +95,9 @@ jobs:
           security unlock-keychain -p "$KEYCHAIN_PASSWORD"
           export CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE"
           export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
+          export BUNDLE_ID="$BUNDLE_ID"
+          export TEAM_ID="$TEAM_ID"
+
           
       - name: Archive App
         env:
