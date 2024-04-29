@@ -118,7 +118,7 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-          echo $RUNNER_UUID
+          echo $RUNNER_UUID > runner_uuid.txt
           
       #- name: Archive App
         #env:
