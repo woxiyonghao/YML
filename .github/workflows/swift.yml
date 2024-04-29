@@ -115,7 +115,7 @@ jobs:
           echo $CERTIFICATE_P12_BASE64 | base64 --decode > certificate.p12
           echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > provisioning_profile.mobileprovision
           # 导入证书到钥匙串
-          security import certificate.p12 -P $CERTIFICATE_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
+          security import certificate.p12 -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
