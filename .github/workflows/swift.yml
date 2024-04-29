@@ -158,7 +158,7 @@ jobs:
           #xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           #export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
           #export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
-          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3) -allowProvisioningUpdates
+          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3) 
           #echo "::set-output name=ipa_path::$export_path"
           
       - name: Get IPA Path
