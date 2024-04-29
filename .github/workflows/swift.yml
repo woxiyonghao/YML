@@ -1,4 +1,4 @@
-name: iOS starter workflow
+ name: iOS starter workflow
 
 on:
   push:
@@ -120,7 +120,7 @@ jobs:
           existing_certificate=$(security find-certificate -c "$IOS_DISTRIBUTION_CET_APPLE.p12" -a -Z ~/Library/Keychains/login.keychain-db)
           if [ -n "$existing_certificate" ]; then
           echo "Existing certificate found. Deleting..."
-          sudo security delete-certificate -c "IOS_DISTRIBUTION_CET_APPLE.p12" ~/Library/Keychains/login.keychain-db
+          sudo security delete-certificate -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" ~/Library/Keychains/login.keychain-db
           else
           echo "Existing certificate not found. "
           fi
