@@ -119,7 +119,6 @@ jobs:
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
           echo $RUNNER_UUID
-          echo "is---- ${RUNNER_UUID} "
           
       #- name: Archive App
         #env:
