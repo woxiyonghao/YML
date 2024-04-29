@@ -116,10 +116,15 @@ jobs:
 
           echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > profile.mobileprovision
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
           UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
           echo "Runner UUID: $UUID"
+          UUID=$(cat runner_uuid.txt)
+          /usr/libexec/PlistBuddy -c "Add :UUID string $UUID" profile.mobileprovision
+          
+          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+
+         
           
       #- name: Archive App
         #env:
