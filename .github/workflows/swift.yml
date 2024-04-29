@@ -121,7 +121,7 @@ jobs:
           echo "Runner UUID: $UUID"
           #UUID=$(cat runner_uuid.txt)
           /usr/libexec/PlistBuddy -c "Add :UUID string $UUID" profile.mobileprovision
-          
+          #7BD53EFB-64A3-5876-BD9F-DE6E3729B6D1
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
          
