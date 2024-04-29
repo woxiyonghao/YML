@@ -124,7 +124,9 @@ jobs:
           else
           echo "Existing certificate not found. "
           fi
-          
+
+          echo "p12 is : $IOS_DISTRIBUTION_CET_APPLE"
+          echo "pws is : $KEYCHAIN_PASSWORD"
           # 导入证书到钥匙串
           sudo security import xiaoji_certificate.p12 -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
           
