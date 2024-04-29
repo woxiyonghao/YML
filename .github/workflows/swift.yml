@@ -117,7 +117,7 @@ jobs:
           security list-keychains
 
           # 导入证书到钥匙串之前先检查是否已存在相同的证书，如果存在则删除
-          existing_certificate=$(security find-certificate -c "$IOS_DISTRIBUTION_CET_APPLE.p12" -a -Z ~/Library/Keychains/login.keychain-db)
+          existing_certificate=$(security find-certificate -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -a -Z ~/Library/Keychains/login.keychain-db)
           if [ -n "$existing_certificate" ]; then
           echo "Existing certificate found. Deleting..."
           sudo security delete-certificate -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" ~/Library/Keychains/login.keychain-db
