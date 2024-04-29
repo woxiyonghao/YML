@@ -128,10 +128,10 @@ jobs:
           else
           echo "Existing certificate not found. "
           fi
-          security find-certificate -a -c ""$GITHUB_WORKSPACE/p_12_apple.p12" -Z ~/Library/Keychains/login.keychain-db
+          security find-certificate -a -c "$GITHUB_WORKSPACE/p_12_apple.p12" -Z ~/Library/Keychains/login.keychain-db
           
           # 导入证书到钥匙串
-          sudo security import "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
+          sudo security import "$GITHUB_WORKSPACE/p_12_apple.p12" -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
           
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
