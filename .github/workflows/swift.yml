@@ -118,10 +118,8 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-          echo $RUNNER_UUID > runner_uuid.txt
-          ls -l runner_uuid.txt
-          echo "----------"
-          cat runner_uuid.txt
+          UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
+          echo "Runner UUID: $UUID"
           
       #- name: Archive App
         #env:
