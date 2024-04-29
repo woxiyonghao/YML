@@ -119,7 +119,7 @@ jobs:
 
           UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
           echo "Runner UUID: $UUID"
-          UUID=$(cat runner_uuid.txt)
+          #UUID=$(cat runner_uuid.txt)
           /usr/libexec/PlistBuddy -c "Add :UUID string $UUID" profile.mobileprovision
           
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
