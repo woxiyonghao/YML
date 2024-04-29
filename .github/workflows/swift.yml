@@ -17,10 +17,10 @@ jobs:
 
 
       # 将证书文件复制到工作目录
-      - name: Copy Certificate Files
-        run: |
-          cp /Users/a123456/Desktop/vs/p_12_apple.p12 $GITHUB_WORKSPACE/
-          cp  /Users/a123456/Desktop/资料/comxiaojibeyond.mobileprovision $GITHUB_WORKSPACE/
+      #- name: Copy Certificate Files
+        #run: |
+          #cp /Users/a123456/Desktop/vs/p_12_apple.p12 $GITHUB_WORKSPACE/
+          #cp  /Users/a123456/Desktop/资料/comxiaojibeyond.mobileprovision $GITHUB_WORKSPACE/
 
       - name: Check if build directory exists
         run: test -d build || mkdir build
@@ -121,14 +121,14 @@ jobs:
           echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > provisioning_profile.mobileprovision
           security list-keychains
           # 导入证书到钥匙串之前先检查是否已存在相同的证书，如果存在则删除
-          existing_certificate=$(security find-certificate -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -a -Z ~/Library/Keychains/login.keychain-db)
+          existing_certificate=$(security find-certificate -c "$GITHUB_WORKSPACE/p_12_apple.p12" -a -Z ~/Library/Keychains/login.keychain-db)
           if [ -n "$existing_certificate" ]; then
           echo "Existing certificate found. Deleting..."
           sudo security delete-certificate -c "" ~/Library/Keychains/login.keychain-db
           else
           echo "Existing certificate not found. "
           fi
-          security find-certificate -a -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -Z ~/Library/Keychains/login.keychain-db
+          security find-certificate -a -c ""$GITHUB_WORKSPACE/p_12_apple.p12" -Z ~/Library/Keychains/login.keychain-db
           
           # 导入证书到钥匙串
           sudo security import "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
