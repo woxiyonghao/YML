@@ -112,15 +112,15 @@ jobs:
            scheme: ${{ 'default' }}
         run: |
           # 解码证书和描述文件
-          echo $IOS_DISTRIBUTION_CET_APPLE | base64 --decode > xiaoji_certificate.p12
+          echo $IOS_DISTRIBUTION_CET_APPLE | base64 --decode > cer.p12
           echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > provisioning_profile.mobileprovision
           security list-keychains
 
           # 导入证书到钥匙串之前先检查是否已存在相同的证书，如果存在则删除
-          existing_certificate=$(security find-certificate -c "xiaoji_certificate.p12" -a -Z ~/Library/Keychains/login.keychain-db)
+          existing_certificate=$(security find-certificate -c "cer.p12" -a -Z ~/Library/Keychains/login.keychain-db)
           if [ -n "$existing_certificate" ]; then
           echo "Existing certificate found. Deleting..."
-          sudo security delete-certificate -c "xiaoji_certificate.p12" ~/Library/Keychains/login.keychain-db
+          sudo security delete-certificate -c "cer.p12" ~/Library/Keychains/login.keychain-db
           else
           echo "Existing certificate not found. "
           fi
