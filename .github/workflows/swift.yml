@@ -16,6 +16,12 @@ jobs:
         uses: actions/checkout@v3
 
 
+      # 将证书文件复制到工作目录
+      - name: Copy Certificate Files
+        run: |
+          cp /Users/a123456/Desktop/vs/p_12_apple.p12 $GITHUB_WORKSPACE/
+          cp  /Users/a123456/Desktop/资料/comxiaojibeyond.mobileprovision $GITHUB_WORKSPACE/
+
       - name: Check if build directory exists
         run: test -d build || mkdir build
         
