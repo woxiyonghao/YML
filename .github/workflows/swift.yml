@@ -141,27 +141,27 @@ jobs:
           #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" 
           #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           
-      #- name: Export IPA
-        #id: export_ipa
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Export IPA
+        id: export_ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           #KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           #CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
           #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
           #----------
-          #KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
-          #IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
-          #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
-          #scheme: ${{ 'default' }}
-        #run: |
-          #if [ $scheme = default ]; then scheme=$(cat default); fi
-          #if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          #file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          #xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
-          #export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
-          #export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
-          #export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3) 
-          #echo "::set-output name=ipa_path::$export_path"
+          KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
+          IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
+          PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+          scheme: ${{ 'default' }}
+        run: |
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
+          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
+          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3)
+          export_path=$(xcodebuild -exportArchive -archivePath build/"$scheme".xcarchive -exportPath build -exportOptionsPlist .github/workflows/ExportOptions.plist CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" | grep -o 'Exported to .*\.ipa' | cut -d ' ' -f 3) 
+          echo "::set-output name=ipa_path::$export_path"
           
       - name: Get IPA Path
         env:
