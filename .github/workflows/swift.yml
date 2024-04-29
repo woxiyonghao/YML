@@ -125,7 +125,7 @@ jobs:
           echo "Existing certificate not found. "
           fi
 
-          security find-certificate -a -c "Apple Distribution: "Guangzhou Chicken Run Network Technology Co.,Ltd" -Z ~/Library/Keychains/login.keychain-db
+          security find-certificate -a -c "Apple Distribution: Guangzhou Chicken Run Network Technology Co.,Ltd" -Z ~/Library/Keychains/login.keychain-db
           
           # 导入证书到钥匙串
           sudo security import IOS_DISTRIBUTION_CET_APPLE.p12 -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
