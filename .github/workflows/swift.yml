@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build and Test default scheme using real device
-    runs-on: self-hosted
+    runs-on: runs-on: macos-latest
    
     steps:
       - name: Checkout
