@@ -76,53 +76,53 @@ jobs:
 
 
         
-      - name: Unlock Keychain And Set Signing Environment Variables
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Unlock Keychain And Set Signing Environment Variables
+        #env:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           #KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           #CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
           #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
           #CERTIFICATE_ADHOC_P12_BASE64: ${{ secrets.CERTIFICATE_ADHOC_P12_BASE64 }}
           #---------
-          KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
-          IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
-          PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
-          BUNDLE_ID: com.xiaoji.beyond
-          TEAM_ID: 2V8DDU6RFC
+          #KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
+          #IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
+          #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+          #BUNDLE_ID: com.xiaoji.beyond
+          #TEAM_ID: 2V8DDU6RFC
 
-        run: |
+        #run: |
           #security unlock-keychain -p "$KEYCHAIN_PASSWORD" 
           #export CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64"
           #export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           #---------
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD"
-          export CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE"
-          export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
-          export BUNDLE_ID="$BUNDLE_ID"
-          export TEAM_ID="$TEAM_ID"
+          #security unlock-keychain -p "$KEYCHAIN_PASSWORD"
+          #export CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE"
+          #export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
+          #export BUNDLE_ID="$BUNDLE_ID"
+          #export TEAM_ID="$TEAM_ID"
           # 解码证书和描述文件
-          echo $IOS_DISTRIBUTION_CET_APPLE | base64 --decode > IOS_DISTRIBUTION_CET_APPLE.p12
-          echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > provisioning_profile.mobileprovision
-          security list-keychains
+          #echo $IOS_DISTRIBUTION_CET_APPLE | base64 --decode > IOS_DISTRIBUTION_CET_APPLE.p12
+          #echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > provisioning_profile.mobileprovision
+          #security list-keychains
           # 导入证书到钥匙串之前先检查是否已存在相同的证书，如果存在则删除
-          existing_certificate=$(security find-certificate -c "$GITHUB_WORKSPACE/p_12_apple.p12" -a -Z ~/Library/Keychains/login.keychain-db)
-          if [ -n "$existing_certificate" ]; then
-          echo "Existing certificate found. Deleting..."
-          sudo security delete-certificate -c "" ~/Library/Keychains/login.keychain-db
-          else
-          echo "Existing certificate not found. "
-          fi
-          security find-certificate -a -c "$GITHUB_WORKSPACE/p_12_apple.p12" -Z ~/Library/Keychains/login.keychain-db
+          #existing_certificate=$(security find-certificate -c "$GITHUB_WORKSPACE/p_12_apple.p12" -a -Z ~/Library/Keychains/login.keychain-db)
+          #if [ -n "$existing_certificate" ]; then
+          #echo "Existing certificate found. Deleting..."
+          #sudo security delete-certificate -c "" ~/Library/Keychains/login.keychain-db
+          #else
+          #echo "Existing certificate not found. "
+          #fi
+          #security find-certificate -a -c "$GITHUB_WORKSPACE/p_12_apple.p12" -Z ~/Library/Keychains/login.keychain-db
           
           # 导入证书到钥匙串
-          sudo security import "$GITHUB_WORKSPACE/p_12_apple.p12" -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
+          #sudo security import "$GITHUB_WORKSPACE/p_12_apple.p12" -P $KEYCHAIN_PASSWORD -A -t cert -f pkcs12 -k ~/Library/Keychains/login.keychain-db
 
-          echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > profile.mobileprovision
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          #echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > profile.mobileprovision
+          #mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
-          UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
-          echo "Runner UUID: $UUID"
-          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+          #UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
+          #echo "Runner UUID: $UUID"
+          #cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
          
           
