@@ -1,3 +1,4 @@
+
 name: iOS Egg Ci
 
 on:
@@ -17,10 +18,7 @@ jobs:
 
 
       - name: Check if build directory exists
-        run: |
-          test -d build || mkdir build
-          vendor_uuid=$(ioreg -rd1 -c IOPlatformExpertDevice | grep -E '"IOPlatformUUID"' | awk -F '["]' '{print $4}')
-          echo "------Vendor UUID: $vendor_uuid"
+        run: test -d build || mkdir build
         
       - name: Set Default Scheme
         run: |
@@ -91,7 +89,7 @@ jobs:
           TEAM_ID: 2V8DDU6RFC
 
         run: |
-          #security unlock-keychain -p "$KEYCHAIN_PASSWORD" 
+          #security unlock-keychain -p "$KEYCHAIN_PASSWORD"
           #export CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64"
           #export PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           #---------
@@ -122,18 +120,19 @@ jobs:
 
           UUID=$(system_profiler SPHardwareDataType | awk '/UUID/ {print $3}')
           echo "Runner UUID: $UUID"
-          #cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-
+          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+          RUNNER_UUID=$(curl -sS --retry 3 --retry-delay 5 -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/actions/runners/$(hostname) | jq -r .id)
+          echo "Runner UUID: $RUNNER_UUID"
          
           
       - name: Archive App
         env:
-           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            #CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64}}
            #PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
            #CERTIFICATE_ADHOC_P12_BASE64: ${{ secrets.CERTIFICATE_ADHOC_P12_BASE64 }}
            #---------
-           #KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
+           KEYCHAIN_PASSWORD: ${{ secrets.XIAOJI }}
            IOS_DISTRIBUTION_CET_APPLE: ${{ secrets.IOS_DISTRIBUTION_CET_APPLE }}
            PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
            scheme: ${{ 'default' }}
@@ -141,9 +140,8 @@ jobs:
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64" 
-          #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive -allowProvisioningUpdates CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
-          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive -allowProvisioningUpdates 
+          #xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive CODE_SIGN_IDENTITY="$CERTIFICATE_ADHOC_P12_BASE64" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
+          xcodebuild archive -workspace "$scheme".xcworkspace -scheme "$scheme" -archivePath build/"$scheme".xcarchive -allowProvisioningUpdates CODE_SIGN_IDENTITY="$IOS_DISTRIBUTION_CET_APPLE" PROVISIONING_PROFILE="$PROVISIONING_PROFILE_BASE64"
           
       - name: Export IPA
         id: export_ipa
